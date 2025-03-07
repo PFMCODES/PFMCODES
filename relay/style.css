@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=swap');
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MuseoModerno', sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #f8f8f8;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7FE883;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background-color: #6bd373;
+}
+
+/* Hero Section */
+.hero {
+    background-color: white;
+    color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.hero img {
+    width: 250px;
+    max-width: 80%;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* Login Prompt Styles */
+#liprompt {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    z-index: 1000;
+}
+
+.prompt-main {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+/* Close button */
+.prompt-main .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Google login button */
+.prompt-main .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #7FE883;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.prompt-main .google-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.prompt-main .google-btn:hover {
+    background: #6bd373;
+}
+
+/* Normal login and signup buttons */
+.prompt-main a button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background: #7FE883;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.prompt-main a button:hover {
+    background: #6bd373;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cta {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .prompt-main {
+        width: 90%;
+    }
+}

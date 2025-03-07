@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFM.COM</title>
+	<link rel="stylesheet" href="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/style.css">
+    <link rel="stylesheet" href="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/c.css">
+    <link rel="stylesheet" href="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/bootstrap.min.css">
+    <link rel="stylesheet" href="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/ionicons.min.css">
+    <link rel="icon" type="image/png" href="https://res-pfmcodes.tiiny.site/PFMCODES/PFM.COM.png">
+    <script src="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/bootstrap.min.js"></script>
+    <script src="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/popper.min.js"></script>
+    <script src="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/plausible.js"></script>
+    <style>
+        
+        /* Popup Styles */
+        .popup {
+            margin-top: 75px;
+            display: block; /* Make the popup always visible */
+            position: fixed;
+            top: 10px; /* Distance from the top */
+            right: 10px; /* Distance from the right */
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: rgb(40, 47, 53);
+            padding: 20px;
+            border-radius: 8px;
+            width: 320px;
+            text-align: center;
+            position: relative;
+            color: aliceblue;
+        }
+
+        .close-btn {
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .popup-content p a {
+            text-decoration: none;
+            color: aliceblue;
+            font-weight: bolder;
+        }
+
+        .popup-content p {
+            font-size: x-large;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        .popup-content h1 {
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+
+        .popup-content img {
+            width: 20px;
+            height: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+        }
+      /* Allow scrolling on the body */
+      body {
+          background-color: #333;
+          margin: 0; /* Remove default margin */
+          padding: 0; /* Remove default padding */
+          height: 100%; /* Ensures full height */
+          overflow: hidden; /* Hide the main scrollbar */
+        }
+
+        .scrollable {
+        height: 100vh; /* Ensures the content area is large enough to scroll */
+        overflow: auto; /* Allows scrolling inside this container */
+        -ms-overflow-style: none; /* Hide the scrollbar in Edge and IE */
+        scrollbar-width: none; /* Hide the scrollbar in Firefox */
+        overflow-x: hidden;
+        }
+
+        /* Hide scrollbar in Webkit browsers (Chrome, Safari) */
+        .scrollable::-webkit-scrollbar {
+        display: none;
+        }
+
+      footer {
+          background-color: rgb(40, 47, 53);
+      }
+
+      span {
+          color: aliceblue;
+      }
+
+      .cont {
+          background-color: #333;
+      }
+
+      p {
+          font-weight: 400;
+          letter-spacing: .05em;
+          color: #527ac0;
+      }
+
+      h1 {
+          font-size: 44px;
+          font-weight: 700;
+          color: aliceblue;
+      }
+
+      .col-lg-5, .col-md-5, .col-sm-5, .col-xs-5 {
+          z-index: 1;
+          max-width: 50%;
+          max-height: 50%;
+      }
+
+      .col-md-7 .content-box .hero-content {
+          z-index: 2;
+          position: absolute;
+          margin-top: 0px;
+          margin-right: 0px;
+      }
+
+      .col-md-7 .content-box .hero-content a {
+          margin-top: 0;
+      }
+
+      .cont, .col-md-7 .content-box .hero-content a {
+          display: flex;
+          align-items: center;
+          justify-content: top;
+      }
+
+      /* Navbar styles */
+      .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+          background-color: rgb(51, 51, 51);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar img {
+          max-height: 50px;
+      }
+
+      .navbar .navbar-links {
+          display: flex;
+          justify-content: flex-end;
+          flex-grow: 1;
+      }
+
+      .navbar a {
+          text-decoration: none;
+          margin-left: 20px;
+          color: #000;
+      }
+
+      .navbar a:hover {
+          color: #0095f7;
+      }
+
+      .social-media p {
+          text-decoration: none;
+          margin-left: 545px;
+          margin-bottom: 0px;
+          width: 100%;
+      }
+
+      .btn {
+          font-size: 14px;
+          font-weight: 400;
+          border-radius: 3px!important;
+          box-shadow: 0 2px 3px 0 rgba(0,0,0,.05), 0 1px 2px 0 rgba(0,0,0,.08);
+      }
+
+      .btn:hover {
+          text-decoration: none;
+      }
+
+      .btn-regular {
+          background-color: #0095f7;
+          color: #ffffff;
+          padding: 10px 25px;
+          letter-spacing: .1em;
+          margin-top: 25px;
+          display: inline-block;
+      }
+
+      .btn-regular:hover {
+          background-color: #0191f0;
+          color: #ffffff;
+      }
+
+      .main-stuff {
+        margin-top: 100px;
+          background-color: #333;
+          color: aliceblue;
+      }
+
+      button .spec {
+          margin-left: 55px;
+      }
+
+      .navbar p {
+          margin-left: 10px;
+          margin-top: 7px;
+      }
+
+      .wat h2 {
+          margin-top: 100px;
+      }
+
+      #wat1 {
+          color: aliceblue;
+      }
+
+          </style>
+<script defer data-domain="pfmcodes.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+<body>
+    <div class="scrollable">
+        <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
+                <img src="https://res-pfmcodes.tiiny.site/PFMCODES/PFM.COM.png" alt="Logo">
+                <p align="right">The Best website for beginner Programmmers</p>
+            <div class="navbar-links">
+                <a href="https://pfmcodes.tiiny.site/Home/">Home</a>
+                <a href="https://pfmcodes.tiiny.site/Login/" id="loginPageLink">Login</a>
+                <a href="https://pfmcodes.tiiny.site/Contact/">Contact</a>
+                <a href="https://pfmcodes.tiiny.site/News/">News</a>
+                <a href="https://pfmcodes.tiiny.site/About/">About</a>
+            </div>
+        </nav>
+    <div class="scrollable">
+        <div class="main-stuff" align="center">
+            <h2>Update 3.0</h2>
+            <h4>Ok, so i tried my best to make this website look as professional as possible</h4>
+            <h2>Update 2.5</h2>
+            <h4>
+            <ul>
+            
+                <li>A few bugs fixes</li>
+                <li><a href="https://pfmcodes.tiiny.site/Home/">Home Page</a></li>
+            <h2>Update 2.0</h2>
+            <h4>Here are a few Things that are changed/added in this update:<br><br>
+            <ul>
+                <li>The Names (You See them on the Top)</li>
+                <li>The Background</li>
+                <li><a href="https://pfmcodes.tiiny.site/">The Main Page</a></li>
+                <li>News.html(This Page)</li>
+                <li>About.html(in the previous update it contained nothing)</li>
+                <li>A loading screen was Added</li>
+                <li>You should explore the new other feature by yourself</li>
+            </ul>
+            </h4>
+            <p>
+            <h2>Update 1.0</h2>
+            <h4>This website was created.</h4>
+            </p>
+        </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopupBtn">&times;</span>
+            <h1>Try Our New Browser</h1>
+            <p>Try Our New Modern Web Browser <br> <b><a href="http://nexus-browser.tiiny.site"><img src="https://res-pfmcodes.tiiny.site/Nexus/logo.png" alt="Nexus">EXUS</a></b></p>
+            <a href="https://nexus-browser.tiiny.site/" class="btn btn-regular">Try</a>
+        </div>
+    </div>
+    <script>
+        // Get the close button element
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const popup = document.getElementById('popup');
+
+        // Close the popup when the close button is clicked
+        closePopupBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
+        <footer>
+            <div class="social-media">
+                <div class="col-md-6 col-xs-12">
+                    <a href="https://www.youtube.com/@codingwithpfm"><img src="https://res-pfmcodes.tiiny.site/PFMCODES/youtube.svg" alt="" style="height:40px;width:40px"></a>
+                    <a href="https://www.github.com/PFM37"><img class="XNo5Ab" src="https://res-pfmcodes.tiiny.site/PFMCODES/github.png" style="height:40px;width:40px" alt="" data-csiid="uneGZ7e9D_yMnesPs_TWWA_15" data-atf="4"></a>
+                    <p>© 2025 PFM.COM Team | <a href="https://pfmcodes.tiiny.site/T&C/">T&C</a> </p>
+                </div>
+            </div>
+        </footer>
+    <script>
+
+    </script>
+    </div>
+</div>
+<script>
+    // Get the login page link element
+    const loginPageLink = document.getElementById("loginPageLink");
+  
+    // Add event listener for login page link click
+    loginPageLink.addEventListener("click", function (event) {
+      // Check if 'Username' exists in localStorage
+      const username = localStorage.getItem('Username');
+  
+      if (username) {
+        // If the 'Username' exists in localStorage, alert the user
+        alert("You're already logged in");
+        // Prevent the default anchor behavior (navigation)
+        event.preventDefault();
+      }
+      // If 'Username' does not exist, it will allow the link to work normally
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login to PFM.COM</title>
+  <link rel="stylesheet" href="https://pfmcodes.tiiny.site/Login.css">
+  <link rel="stylesheet" href="https://res-pfmcodes.tiiny.site/PFMCODES/Landing Page_files/style.css">
+  <link rel="icon" type="image/png" href="https://res-pfmcodes.tiiny.site/PFMCODES/PFM.COM.png">
+</head>
+
+<body>
+  <section>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+
+    <div class="signin">
+      <div class="content">
+        <h2>Log In</h2>
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="username" required>
+            <i>Username</i>
+          </div>
+          <div>
+            <input type="submit" value="Login" class="btn btn-regular" style="margin-left: 115px;" id="login">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Get the necessary elements
+    const loginBtn = document.getElementById("login");
+    const usernameInput = document.getElementById("username");
+  
+    // Add event listener for login button click
+    loginBtn.addEventListener("click", function () {
+      const username = usernameInput.value.trim();
+  
+      if (username === "") {
+        alert("Please enter a username.");
+      } else {
+        // Use confirm instead of alert to get a 'yes' or 'no' response
+        const yesorno = window.confirm("Account UserName: " + username);
+  
+        if (yesorno) {
+          // If 'OK' is clicked, redirect to Home.html
+          window.location.href = "https://pfmcodes.sytes.net/Loging/";
+        }
+      }
+    });
+  
+    // Optional: Detect input changes in username field
+    usernameInput.addEventListener("input", function () {
+      if (usernameInput.value.trim() === "") {
+        console.log("Username field is empty.");
+      } else {
+        console.log("Username entered: " + usernameInput.value);
+        // Save username to localStorage
+        localStorage.setItem('User', usernameInput.value); // Removed the unnecessary + operator
+      }
+    });
+  </script>  
+</body>
+</html>

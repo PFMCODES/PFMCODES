@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Home</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { display: flex; height: 100vh; }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px; background: #7FE883; color: white;
+            display: flex; flex-direction: column;
+            padding: 20px; transition: 0.3s;
+            position: fixed; left: -250px; top: 0; height: 100%;
+        }
+        .sidebar.active { left: 0; }
+        .sidebar a {
+            color: white; text-decoration: none;
+            padding: 10px; display: block;
+        }
+        .sidebar a:hover { background: #70d874; }
+
+        /* Main Content */
+        .content { flex: 1; padding: 20px; margin-left: 250px; transition: margin-left 0.3s; }
+        
+        /* Toggle Button */
+        .toggle-btn {
+            position: absolute; top: 15px; left: 15px;
+            background: #333; color: white;
+            border: none; padding: 10px 15px;
+            font-size: 20px; cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar { left: -250px; }
+            .sidebar.active { left: 0; }
+            .content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <br><br>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Welcome to the App</h1>
+        <p>This is the homepage with a sidebar.</p>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+            let content = document.getElementById("content");
+            if (document.getElementById("sidebar").classList.contains("active")) {
+                content.style.marginLeft = "250px";
+            } else {
+                content.style.marginLeft = "0";
+            }
+        }
+    </script>
+</body>
+</html>

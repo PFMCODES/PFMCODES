@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboCode - Web Code Editor</title>
+
+    <!-- CodeMirror Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/show-hint.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <button id="toggleSidebar">☰</button>
+        <h2>Files</h2>
+        <button id="new-file">New File</button>
+        <button id="open-file">Open File</button>
+        <button id="open-folder">Open Folder</button>
+        <button id="save-file">Save File</button>
+        <button id="download-file">Download</button>
+        <button id="delete-file">Delete</button>
+        <button id="rename-file">Rename</button>
+
+        <h3>Language:</h3>
+        <select id="language-select">
+            <option value="html">HTML</option>
+            <option value="js">JavaScript</option>
+            <option value="ts">TypeScript</option>
+            <option value="css">CSS</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="c">C</option>
+            <option value="cplusplus">C++</option>
+            <option value="csharp">C#</option>
+            <option value="caml">Caml</option>
+            <option value="php">PHP</option>
+            <option value="ruby">Ruby</option>
+            <option value="perl">Perl</option>
+            <option value="shell">Shell</option>
+            <option value="sql">SQL</option>
+            <option value="json">JSON</option>
+            <option value="markdown">Markdown</option>
+            <option value="r">R</option>
+            <option value="rust">Rust</option>
+            <option value="scala">Scala</option>
+            <option value="swift">Swift</option>
+            <option value="go">Go</option>
+            <option value="haskell">Haskell</option>
+            <option value="fsharp">F#</option>
+            <option value="dart">Dart</option>
+            <option value="gdscript">GDScript</option>
+            <option value="wasm">WebAssembly</option>
+            <option value="erlang">Erlang</option>
+            <option value="batchfile">Batch</option>
+            <option value="kotlin">Kotlin</option>
+            <option value="matlab">MATLAB</option>
+            <option value="algol">Algol</option>
+            <option value="dotenv">.env</option>
+        </select>
+
+        <div id="file-list" class="sidebar-list"></div>
+    </div>
+
+    <!-- Editor Container -->
+    <div id="editor-container">
+        <textarea id="editor-area"></textarea>
+    </div>
+
+    <!-- CodeMirror Scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+
+    <!-- CodeMirror Modes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <!-- TurboCode Script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+<VirtualHost *:80>
+    ServerName mywebsite.no-ip.com
+    DocumentRoot "C:/xampp/htdocs/"
+    <Directory "C:/xampp/htdocs/">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboCode</title>
+    <script src="script.js"></script><link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="https://res-pfmcodes.tiiny.site/TurboCode/logo.ico" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 100%;
+            background: #222;
+            color: white;
+            padding: 10px;
+            overflow-y: auto;
+            height: 100vh;
+            display: none;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            background: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #file-tree {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #file-tree li {
+            padding: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .folder-item::before {
+            content: "📁 ";
+        }
+
+        .file-item::before {
+            content: "📄 ";
+        }
+
+        .folder-item:hover, .file-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .editor {
+            flex-grow: 1;
+            padding: 20px;
+            background: #282c34;
+        }
+        .buttonspot {
+            display: flex;
+        }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          let sidebar = document.querySelector(".sidebar");
+          let btn = document.getElementById("sidebar-btn");
+          let editor = document.getElementsByClassName('editor')
+
+          btn.addEventListener("click", function () {
+              if (sidebar.style.display === "none" || sidebar.style.display === "") {
+                  sidebar.style.display = "block";
+                  editor[0].style.display = "none"
+              } else {
+                  sidebar.style.display = "none";
+                  editor[0].style.display = "block"
+              }
+          });
+      });
+    </script>
+
+    <div class="container">
+      <button id="sidebar-btn" style="width:45px; height: 45px; font-size: larger; font-weight: bolder;">☰</button>
+        <div class="sidebar">
+            <button id="open-folder">📂 Open Folder</button>
+            <button id="new-file">📄 New File</button>
+            <button id="new-folder">📁 New Folder</button>
+            <button id="open-file">Open File</button>
+            <button id="save-file">Save File</button>
+            <ul id="file-tree"></ul>  <!-- FOLDER TREE RENDERS HERE -->
+        </div>
+        <div class="editor">
+            <textarea id="editor-area" style="color: white;"></textarea>
+            <div class="buttonspot">
+            <button onclick="htmlFormat()">html</button>
+            <button onclick="RunCode()">Run</button>
+            </div>
+            <script>
+                function RunCode() {
+                    let code = document.getElementById('editor-area').value;
+                    let previewWindow = window.open("", "_blank");
+                    previewWindow.document.open();
+                    previewWindow.document.write(code);
+                    previewWindow.document.close();
+                }
+              function htmlFormat() {
+                let editorArea = document.getElementById('editor-area');
+                editorArea.value = `<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+            </head>
+            <body>
+
+            </body>
+            </html>`;
+            }
+            </script>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .modal-input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+        }
+    </style>
+</html>
+<VirtualHost *:80>
+    ServerName mywebsite.no-ip.com
+    DocumentRoot "C:/xampp/htdocs/"
+    <Directory "C:/xampp/htdocs/">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>

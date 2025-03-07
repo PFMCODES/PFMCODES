@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+    <script>
+        function handleOAuthCallback() {
+            // Get the URL fragment (access token)
+            const params = new URLSearchParams(window.location.hash.substring(1));
+            const accessToken = params.get("access_token    ");
+
+            if (accessToken) {
+                // Store token in localStorage or sessionStorage
+                localStorage.setItem("google_access_token", accessToken);
+
+                // Redirect to main app or show success message
+                window.location.href = "https://pfmcodes.sytes.net/relay/web/";
+            } else {
+                document.getElementById("message").textContent = "OAuth authentication failed.";
+            }
+        }
+
+        window.onload = handleOAuthCallback;
+    </script>
+</head>
+<body>
+    <h2>Processing OAuth Callback...</h2>
+    <p id="message">Please wait...</p>
+</body>
+</html>
