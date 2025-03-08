@@ -74,7 +74,6 @@
           margin: 0; /* Remove default margin */
           padding: 0; /* Remove default padding */
           height: 100%; /* Ensures full height */
-          overflow: hidden; /* Hide the main scrollbar */
         }
 
         .scrollable {
@@ -221,8 +220,7 @@
       #wat1 {
           color: aliceblue;
       }
-
-          </style>
+  </style>
 </head>
 <body>
     <div class="scrollable">
@@ -234,6 +232,7 @@
                 <a href="https://pfmcodes.sytes.net/Contact/">Contact</a>
                 <a href="https://pfmcodes.sytes.net/News/">News</a>
                 <a href="https://pfmcodes.sytes.net/About/">About</a>
+                <a href="https://pfmcodes.sytes.net/search/">Search</a>
             </div>
         </nav>
     <div class="scrollable">
@@ -264,20 +263,19 @@
             </p>
         </div>
         </div>
+        <br>
+        <br>
+        <br>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <footer>
+        <div class="social-media">
+            <div class="col-md-6 col-xs-12">
+                <a href="https://www.youtube.com/@pfmcodes"><img src="https://res-pfmcodes.tiiny.site/PFMCODES/youtube.svg" alt="YouTube Channel" style="height:40px;width:40px"></a>
+                <a href="https://www.github.com/PFM37"><img class="XNo5Ab" src="https://res-pfmcodes.tiiny.site/PFMCODES/github.png" style="height:40px;width:40px" alt="GitHub Profile"></a>
+                <p>© 2025 PFM.COM Team | <a href="T&C/">T&C</a></p>
+            </div>
+        </div>
+    </footer>
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn" id="closePopupBtn">&times;</span>
@@ -296,37 +294,7 @@
             popup.style.display = 'none';
         });
     </script>
-        <footer>
-            <div class="social-media">
-                <div class="col-md-6 col-xs-12">
-                    <a href="https://www.youtube.com/@codingwithpfm"><img src="https://res-pfmcodes.tiiny.site/PFMCODES/youtube.svg" alt="" style="height:40px;width:40px"></a>
-                    <a href="https://www.github.com/PFM37"><img class="XNo5Ab" src="https://res-pfmcodes.tiiny.site/PFMCODES/github.png" style="height:40px;width:40px" alt="" data-csiid="uneGZ7e9D_yMnesPs_TWWA_15" data-atf="4"></a>
-                    <p>© 2025 PFM.COM Team | <a href="https://pfmcodes.tiiny.site/T&C/">T&C</a> </p>
-                </div>
-            </div>
-        </footer>
-    <script>
-
-    </script>
     </div>
 </div>
-<script>
-    // Get the login page link element
-    const loginPageLink = document.getElementById("loginPageLink");
-  
-    // Add event listener for login page link click
-    loginPageLink.addEventListener("click", function (event) {
-      // Check if 'Username' exists in localStorage
-      const username = localStorage.getItem('Username');
-  
-      if (username) {
-        // If the 'Username' exists in localStorage, alert the user
-        alert("You're already logged in");
-        // Prevent the default anchor behavior (navigation)
-        event.preventDefault();
-      }
-      // If 'Username' does not exist, it will allow the link to work normally
-    });
-  </script>
 </body>
 </html>
