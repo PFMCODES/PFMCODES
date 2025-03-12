@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Browser</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f1f1f1; }
+
+        /* Tabs Bar */
+        #tabs { display: flex; background: #ddd; padding: 5px; gap: 5px; overflow-x: auto; }
+        .tab { padding: 8px 15px; background: #bbb; border-radius: 5px; cursor: pointer; }
+        .tab.active { background: white; }
+
+        /* Toolbar */
+        #toolbar { display: flex; background: #222; padding: 10px; align-items: center; }
+        button { background: transparent; border: none; color: white; padding: 5px 10px; cursor: pointer; }
+        button:hover { background: rgba(255,255,255,0.1); }
+        #url { flex: 1; padding: 5px; margin: 0 10px; border-radius: 5px; border: 1px solid #555; }
+
+        /* Page Content */
+        #content { padding: 20px; background: white; min-height: 80vh; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <!-- Tabs -->
+    <div id="tabs">
+        <div class="tab active" onclick="switchTab(0)">New Tab</div>
+    </div>
+
+    <!-- Toolbar -->
+    <div id="toolbar">
+        <button onclick="goBack()">◀</button>
+        <button onclick="goForward()">▶</button>
+        <button onclick="reloadPage()">⟳</button>
+        <input type="text" id="url" placeholder="Enter URL or search" onkeydown="handleEnter(event)">
+        <button onclick="newTab()">➕</button>
+    </div>
+
+    <!-- Content Area -->
+    <div id="content"></div>
+
+    <script>
+        let tabs = [{ url: '', content: '' }];
+        let currentTab = 0;
+
+        function newTab() {
+            tabs.push({ url: '', content: '' });
+            updateTabs();
+            switchTab(tabs.length - 1);
+        }
+
+        function updateTabs() {
+            let tabsContainer = document.getElementById("tabs");
+            tabsContainer.innerHTML = "";
+            tabs.forEach((tab, index) => {
+                let tabElement = document.createElement("div");
+                tabElement.className = "tab" + (index === currentTab ? " active" : "");
+                tabElement.innerText = tab.url ? tab.url : "New Tab";
+                tabElement.onclick = () => switchTab(index);
+                tabsContainer.appendChild(tabElement);
+            });
+        }
+
+        function switchTab(index) {
+            currentTab = index;
+            document.getElementById("url").value = tabs[index].url;
+            document.getElementById("content").innerHTML = tabs[index].content || "Enter a URL";
+            updateTabs();
+        }
+
+        function handleEnter(event) {
+            if (event.key === "Enter") {
+                loadPage();
+            }
+        }
+
+        function loadPage() {
+            let input = document.getElementById("url").value.trim();
+            
+            // Check if it's a URL or search query
+            let url;
+            if (input.includes(".") || input.startsWith("http")) {
+                url = input.startsWith("http") ? input : "https://" + input;
+            } else {
+                url = `https://pfmcodes.syte.net/search?q=${encodeURIComponent(input)}`;
+            }
+
+            tabs[currentTab].url = url;
+
+            fetch("/fetch?url=" + encodeURIComponent(url))
+                .then(response => response.text())
+                .then(data => {
+                    tabs[currentTab].content = data;
+                    document.getElementById("content").innerHTML = data;
+                    updateTabs();
+                })
+                .catch(err => {
+                    document.getElementById("content").innerText = "Error: " + err;
+                });
+        }
+
+        function goBack() {
+            alert("Back button functionality to be added!");
+        }
+
+        function goForward() {
+            alert("Forward button functionality to be added!");
+        }
+
+        function reloadPage() {
+            loadPage();
+        }
+    </script>
+</body>
+</html>
