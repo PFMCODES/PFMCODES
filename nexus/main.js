@@ -1,39 +1,38 @@
 const express = require("express");
 const axios = require("axios");
-const { JSDOM } = require("jsdom");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
-app.use(express.static(__dirname)); // Serve static files
+app.use(cors());
+
+// Serve static files from 'public' folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Serve index.html from the 'public' folder
+app.get("/", (req, res) => {
+    const filePath = path.join(__dirname, "public", "index.html");
+
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            console.error("Error serving index.html:", err);
+            res.status(500).send("Error loading the browser UI.");
+        }
+    });
+});
 
 app.get("/fetch", async (req, res) => {
     let url = req.query.url;
+    if (!url) return res.status(400).send("No URL provided.");
+
     try {
-        const response = await axios.get(url);
-        const dom = new JSDOM(response.data, { resources: "usable" });
-
-        // Extract and apply styles
-        const styles = dom.window.document.querySelectorAll("style, link[rel='stylesheet']");
-        let cssContent = "";
-        styles.forEach(style => {
-            if (style.tagName === "STYLE") {
-                cssContent += style.innerHTML;
-            } else if (style.tagName === "LINK") {
-                let href = style.getAttribute("href");
-                if (href.startsWith("http")) {
-                    cssContent += `@import url('${href}');`;
-                }
-            }
-        });
-
-        // Send combined HTML and CSS
-        res.send(`
-            <style>${cssContent}</style>
-            ${dom.window.document.body.innerHTML}
-        `);
+        let response = await axios.get(url, { headers: { "User-Agent": "Nexus Browser" } });
+        res.send(response.data);
     } catch (error) {
-        console.error("Error fetching page:", error.message);
-        res.status(500).send("Failed to load the page.");
+        res.status(500).send("Error fetching page: " + error.message);
     }
 });
 
-app.listen(3000, () => console.log("Nexus Browser running at http://localhost:3000"));
+app.listen(3000, () => {
+    console.log("Nexus Browser running at http://localhost:3000");
+});

@@ -1,0 +1,107 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+    }
+body { 
+    background: #222; 
+}
+
+/* Tabs Bar */
+#tabs {
+    display: flex; 
+    background: #ddd; 
+    padding: 5px;
+    gap: 5px;
+    overflow-x: auto; 
+}
+.tab { 
+    padding: 8px 15px; 
+    background: #bbb; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+.tab.active { background: white; }
+
+/* Toolbar */
+#toolbar { 
+    display: flex; 
+    background: #222; 
+    padding: 10px; 
+    align-items: center; 
+}
+button { 
+    background: transparent; 
+    border: none; 
+    color: white; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    border-radius: 1000px;
+}
+button:hover { 
+    background: rgba(255,255,255,0.1); 
+}
+button img {
+    width: 15px;
+}
+#url { 
+    flex: 1; 
+    padding: 5px; 
+    margin: 0 10px; 
+    border-radius: 5px; 
+    border: 1px solid #555; 
+}
+
+/* Page Content */
+#content {
+    overflow-y: auto; 
+}
+
+#search-input input, #search-input img {
+    font-size: large;
+    font-style: normal;
+    font-weight: bolder;
+    background-color: #fff;
+    color: #555;
+    height: 10vh; 
+    border-radius: 100px; 
+    border: none;
+}
+
+#search-input img {
+    margin-top: 50px;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+/* Loader Animation */
+.loader {
+    width: 100px;
+    height: 100px;
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-top: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

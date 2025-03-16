@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button id="back"><img src="images/back-arrow.svg" alt="Back"></button>
+        <button id="forward"><img src="images/forward-arrow.svg" alt="Forward"></button>
+        <button id="refresh"><img src="images/refresh.svg" alt="Refresh"></button>
+        <input type="text" id="url" placeholder="Enter URL">
+    </nav>
+    <main id="content"></main>
+
+    <script>
+        content = document.getElementById('content')
+        if (content) {
+        content.innerHTML = ``
+        }
+        async function loadPage(url) {
+            try {
+                let response = await fetch(`/fetch?url=${encodeURIComponent(url)}`);
+                let data = await response.text();
+                let content = document.getElementById("content");
+                content.innerHTML = data;
+                executeScripts(content);
+            } catch (error) {
+                console.error("Error loading page:", error);
+                document.getElementById("content").innerHTML = "<p>Failed to load the page.</p>";
+            }
+        }
+
+        function executeScripts(content) {
+            let scripts = content.querySelectorAll("script");
+            scripts.forEach(oldScript => {
+                let newScript = document.createElement("script");
+                if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                    newScript.async = false;
+                } else {
+                    newScript.textContent = oldScript.textContent;
+                }
+                document.body.appendChild(newScript);
+                oldScript.remove();
+            });
+        }
+
+        document.getElementById("url").addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                let urlInput = document.getElementById("url").value;
+                let url = urlInput.startsWith("http") ? urlInput : "https://" + urlInput;
+                loadPage(url);
+            }
+        });
+
+        document.getElementById("refresh").addEventListener("click", () => {
+            let currentURL = document.getElementById("url").value;
+            if (currentURL) loadPage(currentURL);
+        });
+    </script>
+</body>
+</html>
