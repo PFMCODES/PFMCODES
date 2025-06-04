@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Lulo Clean';
+    src: url('../fonts/Lulo Clean W01 One Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir Light';
+    src: url('../fonts/Avenir Light.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s ease-in-out;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+a:hover {
+    color: #00D646;
+}
+
+body {
+    background: #00D646;
+    overflow: hidden;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.gray {
+    color: #939DAB;
+}
+
+.anvir {
+    font-family: 'Avenir Light', sans-serif;
+}
+
+.lulo {
+    font-family: 'Lulo Clean', sans-serif;
+}
+
+.green {
+    color: #00D646;
+    display: inline; /* optional, just for clarity */
+}
+
+img {
+    user-select: none;
+}
+
+nav {
+    background-color: #324158;
+    max-height: 75px;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.nav-main .home, .apps, .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-main .home:hover, .apps:hover, .about:hover {
+    color: #00D646;
+}
+
+.note {
+    background-color: #324158;
+    margin: 100px 100px 100px 100px;
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.note-logo {
+    display: flex;
+    justify-content: center;
+}
+.note-text p {
+    margin: 100px 100px 100px 100px;
+}
+
+button.transparent {
+    background-color: transparent;
+    border: 0.5px solid #00D646;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px 20px 20px 20px;
+}
+
+.hover-gray:hover {
+    color: #00D646;
+    border: #ffffff00 0.5px solid;
+}

@@ -4,12 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PFMCODES</title>
+    <link rel="shortcut icon" href="./res/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./res/style/main.css">
+    <link rel="stylesheet" href="./res/style/index.html.css">
+    <link rel="stylesheet" href="./res/style/loading.css">
 </head>
 <body>
-    <main class="main" id="main">
-        <section id="hero" class="hero">
-            hi
-        </section>
+    <main id="loading-screen">
+        <div class="loading-main">
+            <div class="loading-text">
+                <h2>Loading, Please Wait...</h2>
+            </div>
+            <div class="loading-bar">
+
+            </div>
+        </div>
     </main>
+    <main class="main" id="main">
+        <nav>
+            <div class="nav-main">
+                <div class="logo pointer">
+                    <img src="res/images/logo.png" alt="logo not found" width="50" height="50">
+                </div>
+                <div class="home pointer green anvir">
+                    HOME
+                </div>
+                <div class="apps pointer anvir gray">
+                    APPS
+                </div>
+                <div class="about pointer anvir gray">
+                    ABOUT ME
+                </div>
+            </div>
+        </nav>
+        <section id="hero" class="hero">
+            <div class="hero-main">
+                <div class="h1" align="center"><h1>HI THERE<span class="green">,</span> I<span class="green">'</span>M PFM<span class="green">.</span></h1></div>
+                <div class="h2">
+                    <h5>
+                        UI/UX DEV, WEB DEV, JS DEV, AND REACT-NATIVE DEV
+                    </h5>
+                </div>
+            </div>
+        </section>
+        <section class="about-me">
+             <div class="note">
+                <div class="note-logo">
+                    <div class="logo">
+                        <img src="res/images/logo.png" alt="logo not found" width="100" height="100" style="user-select: none;">
+                    </div>
+                </div>
+                <div class="note-text">
+                    <p class="anvir">
+                        Hello, I am PFM, a UI/UX developer and web developer. I have a passion for creating beautiful and functional user interfaces. I also enjoy developing web applications using modern technologies like React and Node.js. In my free time, I like to explore new design trends and improve my skills.
+                    </p>
+                </div>
+                <div class="note-logo">
+                    <button class="transparent anvir pointer hover-gray">
+                        CHECK OUT MY APPS
+                    </button>
+                </div>
+             </div>
+        </section>
+        <hr style="height: 5px; background-color: #324158; border: 100px; margin: 0; padding: 0;">
+        <section id="apps">
+            <div class="apps-main">
+                <div class="h1">
+                    <h1>MY APPS</h1>
+                </div>
+                <div class="apps-showcase">
+                    <div class="lexius-container">
+                        <a href="https://lexius.onrender.com">
+                            <div class="lexius-logo">
+                                <img src="https://lexius.onrender.com/images/logo.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="PFM_SEARCH-container">
+                        <a href="./apps/search/">
+                            <div class="lexius-logo">
+                                <img src="./res/images/Search.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blinkr-container">
+                        <a href="./apps/blinkr/">
+                            <div class="lexius-logo">
+                                <img src="./apps/blinkr/logo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </main>
+    <script src="./res/js/main.js"></script>
+    <script src="./res/js/index.html.js"></script>
+    <script src="res/js/loading.js"></script>
 </body>
 </html>

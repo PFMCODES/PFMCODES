@@ -1,0 +1,38 @@
+#loading-screen {
+    position: absolute;
+    background-color: #324158;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: width 1s ease-in-out;
+    opacity: 1;
+}
+
+#loading-screen .loading-main .loading-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.loading-main .loading-text {
+    font-family: 'Lulo Clean', sans-serif;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    content: "Loading, Please Wait...";
+}
+
+.loading-main .loading-bar {
+    width: 0;
+    max-width: calc(100vw - 200px);
+    height: 70px;
+    margin-left: 0px;
+    margin-right: 100px;
+    background-color: #00D646;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.5s ease;
+}
