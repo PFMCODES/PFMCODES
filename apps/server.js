@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     const host = req.headers.host; // e.g., lexius.pfmcodes.com
     const subdomain = host.split('.')[0]; // 'lexius'
 
-    const subdomainPath = path.join(appsPath, subdomain);
+    const subdomainPath = path.join("/", subdomain);
 
     if (fs.existsSync(path.join(subdomainPath, 'index.html'))) {
         express.static(subdomainPath)(req, res, next);
