@@ -14,7 +14,7 @@
         <div class="loading-main">
             <div class="loading-text">
                 <h2>Loading, Please Wait...</h2>
-            </div>
+            </div>/
             <div class="loading-bar">
 
             </div>
@@ -23,7 +23,7 @@
     <main class="main" id="main">
         <nav>
             <div class="nav-main">
-                <div class="logo pointer">
+                <div id="logo" class="logo pointer">
                     <img src="res/images/logo.png" alt="logo not found" width="50" height="50">
                 </div>
                 <div class="home pointer green anvir">
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </nav>
-        <section id="hero" class="hero">
+        <section id="hero" id="home" class="hero">
             <div class="hero-main">
                 <div class="h1" align="center"><h1>HI THERE<span class="green">,</span> I<span class="green">'</span>M PFM<span class="green">.</span></h1></div>
                 <div class="h2">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-me">
+        <section id="about" class="about-me">
              <div class="note">
                 <div class="note-logo">
                     <div class="logo">
@@ -60,7 +60,7 @@
                     </p>
                 </div>
                 <div class="note-logo">
-                    <button class="transparent anvir pointer hover-gray">
+                    <button class="apps transparent anvir pointer hover-gray">
                         CHECK OUT MY APPS
                     </button>
                 </div>
@@ -73,24 +73,31 @@
                     <h1>MY APPS</h1>
                 </div>
                 <div class="apps-showcase">
-                    <div class="lexius-container">
+                    <div class="lexius container" data-tooltip="Click to Learn more">
                         <a href="https://lexius.onrender.com">
-                            <div class="lexius-logo">
+                            <div class="lexius logo">
                                 <img src="https://lexius.onrender.com/images/logo.svg" alt="">
                             </div>
                         </a>
                     </div>
-                    <div class="PFM_SEARCH-container">
+                    <div class="PFM-SEARCH container" data-tooltip="Click to Learn more">
                         <a href="./apps/search/">
-                            <div class="lexius-logo">
+                            <div class="PFM-SEARCH logo">
                                 <img src="./res/images/Search.png" alt="">
                             </div>
                         </a>
                     </div>
-                    <div class="blinkr-container">
+                    <div class="blinkr container" data-tooltip="Click to Learn more">
                         <a href="./apps/blinkr/">
-                            <div class="lexius-logo">
+                            <div class="blinkr logo">
                                 <img src="./apps/blinkr/logo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="relay container" data-tooltip="Click to Learn more">
+                        <a href="./apps/relay/">
+                            <div class="relay logo">
+                                <img src="./res/images/relay.svg" alt="">
                             </div>
                         </a>
                     </div>

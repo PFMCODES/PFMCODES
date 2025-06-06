@@ -1,3 +1,15 @@
 commitAndPush.bat
 commit.bat
 push.bat
+
+apps/blinkr/commitAndPush.bat
+apps/blinkr/commit.bat
+apps/blinkr/push.bat
+
+apps/search/commitAndPush.bat
+apps/search/commit.bat
+apps/search/push.bat
+
+apps/relay/commitAndPush.bat
+apps/relay/commit.bat
+apps/relay/push.bat

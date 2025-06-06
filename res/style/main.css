@@ -12,21 +12,23 @@
     padding: 0;
     box-sizing: border-box;
     transition: 0.2s ease-in-out;
-    max-width: 100vw;
-    max-height: 100vh;
 }
 
 a:hover {
     color: #00D646;
 }
 
-body {
+body, html {
+    scroll-behavior: smooth;
     background: #00D646;
-    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .pointer {
     cursor: pointer;
+    user-select: none;
 }
 
 .gray {
