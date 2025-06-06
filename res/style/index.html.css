@@ -109,8 +109,8 @@ div.container.relay a div.logo.relay img {
     left: 70%;
     top: -50%;
     transform: translateX(-50%);
-    background-color: #7289da;
-    color: white;
+    background-color: #FFFFFF;
+    color: #00D646;
     padding: 8px 12px;
     border-radius: 8px;
     font-size: 14px;
@@ -130,7 +130,7 @@ div.container.relay a div.logo.relay img {
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: transparent transparent transparent #7289da;
+    border-color: transparent transparent transparent #FFFFFF;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -141,4 +141,23 @@ div.container.relay a div.logo.relay img {
 .container:hover::after {
     opacity: 1;
     visibility: visible;
+}
+
+.relay-container::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 70%;
+    top: -5%;
+    transform: translateX(-50%);
+    background-color: #FFFFFF;
+    color: #00D646;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
