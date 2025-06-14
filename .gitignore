@@ -13,3 +13,7 @@ apps/search/push.bat
 apps/relay/commitAndPush.bat
 apps/relay/commit.bat
 apps/relay/push.bat
+
+apps/relay/.git
+apps/blinkr/.git
+apps/search/.git
