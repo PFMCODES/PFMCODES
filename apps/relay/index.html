@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relay - The future of Chat Apps</title>
+    <link rel="shortcut icon" href="res/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+  <div id="chat-box" style="height: 400px; overflow-y: auto; border: 1px solid #ccc; margin-bottom: 10px; padding: 10px; background: #f9f9f9;"></div>
+  <form id="form" style="display: flex;">
+    <input id="input" autocomplete="off" placeholder="Type a message..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px 0 0 4px;" />
+    <button id="send" type="submit" style="padding: 10px 20px; border: none; background: #007bff; color: #fff; border-radius: 0 4px 4px 0; cursor: pointer;">Send</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+    const chatBox = document.getElementById('chat-box');
+
+    form.addEventListener('submit', (e) => {
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
+      }
+    });
+
+    socket.on('chat message', (msg) => {
+      const item = document.createElement('div');
+      item.textContent = msg;
+      item.style.padding = '5px 0';
+      chatBox.appendChild(item);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    });
+  </script>
+</body>
+</html>
