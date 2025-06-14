@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFM-Search API</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex bg-gray-50">
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="w-64 h-screen bg-gray-100 text-gray-800 p-4 fixed transition-transform transform -translate-x-full md:translate-x-0 shadow-md">
+        <h2 class="text-xl font-bold mb-4">PFM-Search</h2>
+        <ul>
+            <li class="mb-2"><a href="./" class="block p-2 rounded hover:bg-gray-200">Home</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6 ml-0 md:ml-64 transition-all">
+        <button id="toggle-btn" class="md:hidden bg-gray-300 text-gray-800 p-2 rounded mb-4">☰ Menu</button>
+        <h1 class="text-2xl font-bold mb-4">Welcome to PFM-Search API</h1>
+        <p class="mb-4">Search anything using our powerful API.</p>
+
+        <!-- Tabs -->
+        <div class="mb-4">
+            <button onclick="showCode('python')" class="tab-btn bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Python</button>
+            <button onclick="showCode('javascript')" class="tab-btn bg-gray-300 text-gray-800 px-4 py-2 rounded-md mr-2">JavaScript</button>
+        </div>
+
+        <!-- Code Blocks -->
+        <div class="code-blocks">
+            <pre id="python-code" class="bg-gray-200 p-3 rounded-lg">
+                <code class="text-red-600 font-mono">print("Hello, World!")</code>
+            </pre>
+            <pre id="javascript-code" class="bg-gray-200 p-3 rounded-lg hidden">
+                <code class="text-blue-600 font-mono">console.log("Hello, World!");</code>
+            </pre>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar and Tabs -->
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggle-btn');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        function showCode(lang) {
+            document.querySelectorAll('.code-blocks pre').forEach(el => el.classList.add('hidden'));
+            document.querySelector(`#${lang}-code`).classList.remove('hidden');
+
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-blue-500', 'text-white');
+                el.classList.add('bg-gray-300', 'text-gray-800');
+            });
+
+            event.target.classList.add('bg-blue-500', 'text-white');
+            event.target.classList.remove('bg-gray-300', 'text-gray-800');
+        }
+    </script>
+
+</body>
+</html>
