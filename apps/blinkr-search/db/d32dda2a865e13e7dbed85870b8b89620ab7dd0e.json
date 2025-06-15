@@ -1,0 +1,12 @@
+{
+  "links": [
+    "https://myaccount.google.com/signin/usernamerecovery?continue=https://myaccount.google.com/general-light&dsh=S1211507375:1748620912278258&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://myaccount.google.com/general-light&ifkv=AdBytiPFdH5Z18vEnhaZ0kq00zv7fKrkGO6tDDqyo60BgrLEMxhpOo49EC9n4L4_HyVIG0bVTVEDVg&osid=1",
+    "https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US",
+    "https://myaccount.google.com/lifecycle/flows/signup?continue=https://myaccount.google.com/general-light&dsh=S1211507375:1748620912278258&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://myaccount.google.com/general-light&ifkv=AdBytiPFdH5Z18vEnhaZ0kq00zv7fKrkGO6tDDqyo60BgrLEMxhpOo49EC9n4L4_HyVIG0bVTVEDVg&osid=1",
+    "https://support.google.com/accounts?hl=en-US&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-US&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-US"
+  ],
+  "title": "Sign in - Google Accounts",
+  "url": "https://myaccount.google.com/delete-services-or-account"
+}

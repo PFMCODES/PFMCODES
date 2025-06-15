@@ -1,0 +1,9 @@
+{
+  "links": [
+    "https://support.google.com/accounts?hl=en-US&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-US&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-US"
+  ],
+  "title": "Sign in - Google Accounts",
+  "url": "https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp"
+}

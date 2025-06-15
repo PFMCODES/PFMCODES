@@ -1,0 +1,12 @@
+{
+  "links": [
+    "https://www.google.com/signin/usernamerecovery?continue=https://adsense.google.com/adsense/login?continue%3Dhttps://adsense.google.com/adsense/?utm_source%253Dabout.google%2526utm_medium%253Dreferral%2526utm_campaign%253Dproductslist&dsh=S-317766485:1748620231329110&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://adsense.google.com/adsense/login?continue%3Dhttps://adsense.google.com/adsense/?utm_source%253Dabout.google%2526utm_medium%253Dreferral%2526utm_campaign%253Dproductslist&ifkv=AdBytiMp1CpGkje6zCMGQIGaP3aaFbyIY_LGZE8CUdeTYw9AU4t56_Vy6gwTtJLbxb2n0NG026bBbQ&service=adsense",
+    "https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US",
+    "https://www.google.com/lifecycle/flows/signup?continue=https://adsense.google.com/adsense/login?continue%3Dhttps://adsense.google.com/adsense/?utm_source%253Dabout.google%2526utm_medium%253Dreferral%2526utm_campaign%253Dproductslist&dsh=S-317766485:1748620231329110&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://adsense.google.com/adsense/login?continue%3Dhttps://adsense.google.com/adsense/?utm_source%253Dabout.google%2526utm_medium%253Dreferral%2526utm_campaign%253Dproductslist&ifkv=AdBytiMp1CpGkje6zCMGQIGaP3aaFbyIY_LGZE8CUdeTYw9AU4t56_Vy6gwTtJLbxb2n0NG026bBbQ&nogm=1&service=adsense",
+    "https://support.google.com/accounts?hl=en-US&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-US&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-US"
+  ],
+  "title": "Google AdSense",
+  "url": "https://www.google.com/adsense/?utm_source=about.google&utm_medium=referral&utm_campaign=productslist"
+}

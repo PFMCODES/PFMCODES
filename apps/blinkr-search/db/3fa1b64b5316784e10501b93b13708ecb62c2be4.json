@@ -1,0 +1,31 @@
+{
+  "links": [
+    "https://wellarchitected.github.com/library/overview/release-notes",
+    "https://wellarchitected.github.com/library/overview",
+    "https://wellarchitected.github.com/library/overview/layers",
+    "https://wellarchitected.github.com/library/productivity",
+    "https://wellarchitected.github.com/library/collaboration",
+    "https://wellarchitected.github.com/library/application-security",
+    "https://wellarchitected.github.com/library/governance",
+    "https://wellarchitected.github.com/library/architecture",
+    "https://wellarchitected.github.com/library/overview/getting-started-checklist/",
+    "https://wellarchitected.github.com/library/overview/about-the-assessment",
+    "https://x.com/github",
+    "https://www.facebook.com/GitHub",
+    "https://www.youtube.com/github",
+    "https://github.com/github",
+    "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+    "https://docs.github.com/site-policy/privacy-policies/github-privacy-statement",
+    "https://github.com/security",
+    "https://www.githubstatus.com/",
+    "https://docs.github.com/",
+    "https://support.github.com/?tags=dotcom-footer",
+    "https://github.com/pricing",
+    "https://docs.github.com/get-started/exploring-integrations/about-building-integrations",
+    "https://partner.github.com/",
+    "https://github.blog/",
+    "https://github.com/about"
+  ],
+  "title": "GitHub Well-Architected",
+  "url": "https://wellarchitected.github.com/"
+}

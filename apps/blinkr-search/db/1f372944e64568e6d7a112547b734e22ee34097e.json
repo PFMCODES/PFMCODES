@@ -1,0 +1,12 @@
+{
+  "links": [
+    "https://accounts.google.com/signin/usernamerecovery?continue=http://support.google.com/youtube/answer/11616410?visit_id%3D638842163739643312-2965177671%26rd%3D1&dsh=S959942813:1748620917311036&ec=GAZAdQ&flowEntry=ServiceLogin&flowName=WebLiteSignIn&hl=en&ifkv=AdBytiMIHNF4OQ10WewYgvchA26zizCwd2YdgM69n_eRqT_-xd6njH5_4_8ylNTolVfV09-MaP_XpQ",
+    "https://support.google.com/accounts?p=signin_privatebrowsing&hl=en",
+    "https://accounts.google.com/lifecycle/flows/signup?continue=http://support.google.com/youtube/answer/11616410?visit_id%3D638842163739643312-2965177671%26rd%3D1&dsh=S959942813:1748620917311036&ec=GAZAdQ&flowEntry=SignUp&flowName=GlifWebSignIn&hl=en&ifkv=AdBytiMIHNF4OQ10WewYgvchA26zizCwd2YdgM69n_eRqT_-xd6njH5_4_8ylNTolVfV09-MaP_XpQ",
+    "https://support.google.com/accounts?hl=en&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=en&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=en"
+  ],
+  "title": "Sign in - Google Accounts",
+  "url": "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=http://support.google.com/youtube/answer/11616410%3Fvisit_id%3D638842163739643312-2965177671%26rd%3D1&ec=GAZAdQ"
+}

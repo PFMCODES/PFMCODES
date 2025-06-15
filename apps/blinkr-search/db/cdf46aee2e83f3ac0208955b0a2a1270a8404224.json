@@ -1,0 +1,14 @@
+{
+  "links": [
+    "https://myactivity.google.com/",
+    "https://www.google.co.in/intl/en/about/products",
+    "https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://myactivity.google.com/?continue%3Dhttps://myactivity.google.com/activitycontrols?hl%253Den_GB&followup=https://myactivity.google.com/?continue%3Dhttps://myactivity.google.com/activitycontrols?hl%253Den_GB&ec=GAZA3wM",
+    "https://myactivity.google.com/",
+    "https://support.google.com/accounts?p=my_activity&hl=en_US",
+    "https://accounts.google.com/ServiceLogin?hl=en-US&continue=https://myactivity.google.com/?continue%3Dhttps://myactivity.google.com/activitycontrols?hl%253Den_GB",
+    "https://myaccount.google.com/privacypolicy?hl=en-US",
+    "https://myaccount.google.com/termsofservice?hl=en-US"
+  ],
+  "title": "Welcome to My Activity",
+  "url": "https://myactivity.google.com/activitycontrols?hl=en_GB"
+}

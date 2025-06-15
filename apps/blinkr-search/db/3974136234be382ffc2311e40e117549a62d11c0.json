@@ -1,0 +1,12 @@
+{
+  "links": [
+    "https://accounts.google.com/signin/usernamerecovery?continue=http://support.google.com/youtube/?hl%3Dhi&dsh=S-552234673:1748620293615290&ec=GAZAdQ&flowEntry=ServiceLogin&flowName=WebLiteSignIn&hl=hi&ifkv=AdBytiPy6LRYreaCfBWMZiaEQKiYtoZOvLaAnJhc6ko85s4NuA711bdzbXSdNVaLb4xlB5rm4u1_yQ",
+    "https://support.google.com/accounts?p=signin_privatebrowsing&hl=hi",
+    "https://accounts.google.com/lifecycle/flows/signup?continue=http://support.google.com/youtube/?hl%3Dhi&dsh=S-552234673:1748620293615290&ec=GAZAdQ&flowEntry=SignUp&flowName=GlifWebSignIn&hl=hi&ifkv=AdBytiPy6LRYreaCfBWMZiaEQKiYtoZOvLaAnJhc6ko85s4NuA711bdzbXSdNVaLb4xlB5rm4u1_yQ",
+    "https://support.google.com/accounts?hl=hi&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=hi&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=hi"
+  ],
+  "title": "Google खाते में साइन इन करें",
+  "url": "https://accounts.google.com/ServiceLogin?hl=hi&passive=true&continue=http://support.google.com/youtube/%3Fhl%3Dhi&ec=GAZAdQ"
+}

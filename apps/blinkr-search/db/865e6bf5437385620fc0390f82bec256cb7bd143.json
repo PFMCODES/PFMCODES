@@ -1,0 +1,17 @@
+{
+  "links": [
+    "https://myaccount.google.com/?tab=kk",
+    "https://www.google.co.in/intl/en/about/products?tab=kh",
+    "https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://myaccount.google.com/not-supported&followup=https://myaccount.google.com/not-supported&ec=GAZAwAE",
+    "https://myaccount.google.com/?tab=kk",
+    "https://www.google.com/chrome/?hl=en-US",
+    "https://www.mozilla.com/firefox/",
+    "https://www.microsoft.com/edge",
+    "https://www.apple.com/safari/download/",
+    "https://www.google.com/intl/en_US/about/",
+    "https://policies.google.com/",
+    "https://support.google.com/accounts?hl=en_US"
+  ],
+  "title": "Account settings: Your browser is not supported.",
+  "url": "https://myaccount.google.com/deleteaccount?utm_source=pp&hl=en_GB"
+}

@@ -1,0 +1,12 @@
+{
+  "links": [
+    "https://accounts.google.com/signin/usernamerecovery?continue=http://support.google.com/?tab%3Duu&dsh=S304089358:1748619705939194&ec=GAZAdQ&flowEntry=ServiceLogin&flowName=WebLiteSignIn&hl=en&ifkv=AdBytiOtu_Q4FVQawE0Q-I0F_qzTDtgyPjFvG8-PXmwECEmhj8yZrrlTnR7_H1xh1U4H-lzZPl1f4Q",
+    "https://support.google.com/accounts?p=signin_privatebrowsing&hl=en",
+    "https://accounts.google.com/lifecycle/flows/signup?continue=http://support.google.com/?tab%3Duu&dsh=S304089358:1748619705939194&ec=GAZAdQ&flowEntry=SignUp&flowName=GlifWebSignIn&hl=en&ifkv=AdBytiOtu_Q4FVQawE0Q-I0F_qzTDtgyPjFvG8-PXmwECEmhj8yZrrlTnR7_H1xh1U4H-lzZPl1f4Q",
+    "https://support.google.com/accounts?hl=en&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=en&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=en"
+  ],
+  "title": "Sign in - Google Accounts",
+  "url": "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=http://support.google.com/%3Ftab%3Duu&ec=GAZAdQ"
+}

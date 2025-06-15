@@ -1,0 +1,12 @@
+{
+  "links": [
+    "https://myaccount.google.com/signin/usernamerecovery?continue=https://myaccount.google.com/activitycontrols?utm_source%3Dpp%26hl%3Den_GB&dsh=S402676048:1748618367398580&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://myaccount.google.com/activitycontrols?utm_source%3Dpp%26hl%3Den_GB&hl=en_GB&ifkv=AdBytiN-6beXt8qgQQAqnhe7Wdl2Moda_vOZVhZImAIdcUirwP0XgmJqaDOypxU9WsjcqDIVm_SLCQ&osid=1&service=accountsettings",
+    "https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-GB",
+    "https://myaccount.google.com/lifecycle/flows/signup?continue=https://myaccount.google.com/activitycontrols?utm_source%3Dpp%26hl%3Den_GB&dsh=S402676048:1748618367398580&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://myaccount.google.com/activitycontrols?utm_source%3Dpp%26hl%3Den_GB&hl=en_GB&ifkv=AdBytiN-6beXt8qgQQAqnhe7Wdl2Moda_vOZVhZImAIdcUirwP0XgmJqaDOypxU9WsjcqDIVm_SLCQ&osid=1&service=accountsettings",
+    "https://support.google.com/accounts?hl=en-GB&p=account_iph",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-GB&privacy=true",
+    "https://accounts.google.com/TOS?loc=IN&hl=en-GB"
+  ],
+  "title": "Sign in – Google accounts",
+  "url": "https://myaccount.google.com/activitycontrols?utm_source=pp&hl=en_GB"
+}

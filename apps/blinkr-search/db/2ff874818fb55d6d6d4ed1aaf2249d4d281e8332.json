@@ -1,0 +1,24 @@
+{
+  "links": [
+    "https://resources.github.com/",
+    "https://github.com/",
+    "https://resources.github.com/",
+    "https://github.com/solutions/executive-insights",
+    "https://github.blog/news-insights/octoverse/octoverse-2024/",
+    "https://www.ibm.com/reports/data-breach",
+    "https://docs.github.com/en/code-security/securing-your-organization/understanding-your-organizations-exposure-to-leaked-secrets/viewing-the-secret-risk-assessment-report-for-your-organization?utm_source=EIhub&utm_medium=Article&utm_campaign=GHAS-unbundle",
+    "https://www.cybersecuritydive.com/news/lastpass-cyberattack-timeline/643958/",
+    "https://cointelegraph.com/news/lastpass-threat-actor-steals-over-5-million-from-40-victims",
+    "https://ponemonsullivanreport.com/2017/11/how-data-breaches-affect-reputation-and-share-value/",
+    "https://github.com/OWASP/ASVS",
+    "https://docs.github.com/en/rest/authentication/keeping-your-api-credentials-secure?apiVersion=2022-11-28",
+    "https://docs.github.com/en/code-security/securing-your-organization/understanding-your-organizations-exposure-to-leaked-secrets/viewing-the-secret-risk-assessment-report-for-your-organization?utm_source=EIhub&utm_medium=Article&utm_campaign=GHAS-unbundle",
+    "https://github.com/resources/whitepapers/secret-scanning-a-key-to-your-cybersecurity-strategy?utm_source=EIhub&utm_medium=Article&utm_campaign=GHAS-unbundle",
+    "https://github.com/security/advanced-security/secret-protection?utm_source=EIhub&utm_medium=Article&utm_campaign=GHAS-unbundle",
+    "https://github.com/solutions/executive-insights",
+    "https://resources.github.com/topics/security/",
+    "https://resources.github.com/topics/github-advanced-security/"
+  ],
+  "title": "Understanding your organization's exposure to secret leaks - GitHub Resources",
+  "url": "https://resources.github.com/enterprise/understanding-secret-leak-exposure/"
+}

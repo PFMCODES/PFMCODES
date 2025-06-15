@@ -1,0 +1,33 @@
+{
+  "links": [
+    "https://resources.github.com/",
+    "https://github.com/",
+    "https://resources.github.com/",
+    "https://github.blog/2022-05-06-todays-most-common-security-vulnerabilities-explained/",
+    "https://debricked.com/blog/vulnerabilities-dependencies/",
+    "https://maven.apache.org/",
+    "https://www.npmjs.com/package/npm",
+    "https://github.com/advisories",
+    "https://nvd.nist.gov/",
+    "https://github.com/advisories",
+    "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates",
+    "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/exploring-the-dependencies-of-a-repository",
+    "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts",
+    "https://github.co/security-updates",
+    "https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates",
+    "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates",
+    "https://docs.github.com/en/code-security/supply-chain-security",
+    "https://github.com/advisories",
+    "https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql",
+    "https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning",
+    "https://docs.github.com/en/code-security/security-overview/about-the-security-overview",
+    "https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security",
+    "https://resources.github.com/demo/advanced-security/",
+    "https://resources.github.com/appsec/",
+    "https://resources.github.com/security/scaling-github-advanced-security/",
+    "https://resources.github.com/topics/security/",
+    "https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+  ],
+  "title": "How developer-first supply chain security helps you ship secure software fast - GitHub Resources",
+  "url": "https://resources.github.com/security/supply-chain-security/"
+}

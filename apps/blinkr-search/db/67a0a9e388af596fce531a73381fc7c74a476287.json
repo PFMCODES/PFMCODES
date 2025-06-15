@@ -1,0 +1,21 @@
+{
+  "links": [
+    "https://www.google.com/appsstatus/dashboard/",
+    "https://support.google.com/a/",
+    "https://support.google.com/a/answer/139569",
+    "https://workspace.google.com/",
+    "https://ads.google.com/status/publisher",
+    "https://www.google.com/appsstatus/dashboard/summary",
+    "https://www.google.com/appsstatus/dashboard/summary",
+    "https://support.google.com/a/answer/139569",
+    "https://www.google.com/appsstatus/dashboard/en-IN/feed.atom",
+    "https://www.google.com/appsstatus/dashboard/incidents.json",
+    "https://www.google.com/appsstatus/dashboard/incidents.schema.json",
+    "https://www.google.com/appsstatus/dashboard/products.json",
+    "https://www.google.com/appsstatus/dashboard/products.schema.json",
+    "http://www.google.com/appsstatus#",
+    "https://policies.google.com/privacy"
+  ],
+  "title": "Google Workspace Status Dashboard",
+  "url": "http://www.google.com/appsstatus"
+}
