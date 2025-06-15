@@ -6,9 +6,10 @@ apps/blinkr/commitAndPush.bat
 apps/blinkr/commit.bat
 apps/blinkr/push.bat
 
-apps/search/commitAndPush.bat
-apps/search/commit.bat
-apps/search/push.bat
+apps/blinkr-search/commitAndPush.bat
+apps/blinkr-search/commit.bat
+apps/blinkr-search/push.bat
+apps/blinkr-search/db
 
 apps/relay/commitAndPush.bat
 apps/relay/commit.bat

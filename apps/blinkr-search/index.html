@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New tab</title>
+    <link rel="shortcut icon" href="../blinkr/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/new.css">
+</head>
+<body>
+    <div id="main">
+        <div id="search-logo">
+            <img id="logo" src="../blinkr/logo.png">
+            <h1>Search</h1>
+        </div><br>
+        <div class="input" align="center">
+            <img src="./assets/images/search.svg" alt="" align="center"><input id="input" placeholder="Search or type a URL" align="center" type="text">
+        </div>
+    <script src="../../assets/scripts/index.js"></script>
+    <script>
+
+    document.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            const para = document.getElementById('input').value;
+            window.location.href = `./search/?q=${encodeURIComponent(para)}`;
+        }
+    });
+</script>
+
+</body>
+</html>
