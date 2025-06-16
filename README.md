@@ -21,7 +21,6 @@
 |------------|-------------|------------|
 | [**Blinkr**](https://github.com/PFMCODES/Blinkr) | A next-generation web browser built for speed, simplicity, and user control. | HTML |
 | [**blinkr-mobile**](https://github.com/PFMCODES/blinkr-mobile) | Blinkr, reimagined for mobile devices. | TypeScript |
-| [**Website.**](https://github.com/PFMCODES/Website.) | The official PFMCODES landing page / website. | JavaScript |
 | [**n**](https://github.com/PFMCODES/n) | A Node.js module that handles heavy work in the backend. | TypeScript |
 | [**Lexius**](https://github.com/PFMCODES/Lexius) | Likely a theme, extension, or visual utility (details TBD). | CSS |
 
