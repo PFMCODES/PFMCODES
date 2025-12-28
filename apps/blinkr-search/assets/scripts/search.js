@@ -110,7 +110,7 @@ async function search(query) {
       pUrl = p.url.substring(0, 57) + '...';
     }
     if (p.title.length > 60) {
-      p.title = p.title.substring(0, 17) + '...';
+      p.title = p.title.substring(0, 57) + '...';
     }
     div.className = 'result';
     div.innerHTML = `
