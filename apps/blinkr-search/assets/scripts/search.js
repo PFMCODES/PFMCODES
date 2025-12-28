@@ -4,6 +4,7 @@ let allFiles = [];
 let isSearching = false;
 const searchInput = document.getElementById('input');
 const resultsContainer = document.getElementById('results');
+let pUrl;
 
 // Load query from URL (?q=...)
 window.addEventListener('DOMContentLoaded', () => {
@@ -24,14 +25,14 @@ document.addEventListener("keypress", (e) => {
     }
 });
 
-searchInput.addEventListener('input', () => {
-    const query = searchInput.value.trim();
-    if (query.length > 0) {
-    search(query);
-    } else {
-    resultsContainer.innerHTML = '';
-    }
-});
+// searchInput.addEventListener('input', () => {
+//     const query = searchInput.value.trim();
+//     if (query.length > 0) {
+//     search(query);
+//     } else {
+//     resultsContainer.innerHTML = '';
+//     }
+// });
 
 async function loadData() {
     try {
@@ -105,6 +106,12 @@ async function search(query) {
   resultsContainer.innerHTML = '';
   allResults.forEach(p => {
     const div = document.createElement('div');
+    if (p.url.length > 60) {
+      pUrl = p.url.substring(0, 57) + '...';
+    }
+    if (p.title.length > 60) {
+      p.title = p.title.substring(0, 17) + '...';
+    }
     div.className = 'result';
     div.innerHTML = `
       <a href="${p.url}" target="_blank">
@@ -112,7 +119,7 @@ async function search(query) {
           <img style="width: 20px;" src="${p.favicon}" alt="favicon">
           <div>
             <strong>${p.title}</strong><br>
-            <small>${p.url}</small>
+            <small>${pUrl}</small>
             <p style="margin: 5px 0; color: #666; font-size: 13px;">${p.desc}</p>
           </div>
         </div>

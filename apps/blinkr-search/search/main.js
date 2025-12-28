@@ -47,29 +47,17 @@ function getQueryParam(param) {
                 });
         }
 
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const query = document.getElementById('searchQuery').value.trim();
-            if (query) {
-                window.history.pushState({}, "", `?query=${encodeURIComponent(query)}`);
-                performSearch(query);
-            }
-        });
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('searchQuery').value.trim();
+    if (query) {
+        window.history.pushState({}, "", `?query=${encodeURIComponent(query)}`);
+        performSearch(query);
+    }
+});
 
-        const queryParam = getQueryParam('query');
-        if (queryParam) { 
-            performSearch(queryParam);
-        }
-      document.getElementById("searchQuery").addEventListener("keypress", function(event) {
-          if (event.key === "Enter") {
-              searchQuery();
-          }
-      });
-      
-      function searchQuery() {
-          let query = document.getElementById("search-input").value.trim();
-          if (query !== "") {
-            query = queryParam;
-          }
-      }
-      performSearch()
+const queryParam = getQueryParam('query');
+if (queryParam) { 
+    performSearch(queryParam);
+}
+performSearch()

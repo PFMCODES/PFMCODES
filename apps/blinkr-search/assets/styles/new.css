@@ -1,5 +1,3 @@
-@import url("./main.css");
-
 @font-face {
     font-family: 'Lulo Clean', sans-serif;
     src: url("../../assets/fonts/Lulo\ Clean\ W01\ One\ Bold.ttf");
@@ -9,11 +7,14 @@ body {
     background-color: #1F2937;
     color: #f1f1f1;
     font-family: 'Lulo Clean', sans-serif;
-    font-weight: 900;
+}
+
+img {
+    user-select: none !important;
 }
 
 #logo {
-    width: 100px;
+    width: 500px;
 }
 
 #search-logo {
@@ -38,6 +39,23 @@ input {
     color: #fff;
     border-radius: 50px;
     background-color: #181f29;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 1000px #181f29 inset !important;
+  caret-color: #fff;
+  font-size: 16px !important;      /* or whatever you use */
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+*::selection {
+    background-color: #8107FB;
+    color: #fff;
 }
 
 .input {
