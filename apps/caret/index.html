@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caret Demo</title>
+  <link rel="shortcut icon" href="logo.svg" type="image/svg">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #editor {
+      width: 900px;
+      height: 600px;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    #result {
+      width: 900px;
+      margin: 10px auto;
+      padding: 10px;
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 13px;
+      border-radius: 8px;
+      min-height: 40px;
+      white-space: pre-wrap;
+    }
+
+    .controls {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .controls span {
+      font-size: 12px;
+      opacity: 0.5;
+      align-self: center;
+      margin: 0 4px;
+    }
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      background: #7116d8;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    button:hover {
+      background: #5a11ab;
+    }
+  </style>
+</head>
+<body>
+  <h1>Caret Demo</h1>
+
+  <div class="controls">
+    <span>Language:</span>
+    <button onclick="window.changeLanguage('javascript')">JavaScript</button>
+    <button onclick="window.changeLanguage('python')">Python</button>
+    <button onclick="window.changeLanguage('html')">HTML</button>
+    <span>Theme:</span>
+    <button onclick="window.changeTheme('tokyo-night-dark')">Tokyo Night</button>
+    <button onclick="window.changeTheme('monokai')">Monokai</button>
+    <button onclick="window.changeTheme('github-dark')">GitHub Dark</button>
+    <button onclick="window.changeTheme('atom-one-dark')">Atom One Dark</button>
+    <span>Actions:</span>
+    <button onclick="window.runCode()">▶ Run</button>
+    <button onclick="window.getCode()">Get Code</button>
+  </div>
+
+  <div id="editor"></div>
+  <div id="result"></div>
+
+  <script type="module">
+    import { createTextEditor } from './components/textEditor.js';
+
+    window.language = 'javascript';
+    window.currentTheme = 'tokyo-night-dark';
+
+    const jsCode = `// Welcome to Caret!
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Calculate first 10 Fibonacci numbers
+for (let i = 0; i < 10; i++) {
+  console.log(\`F(\${i}) = \${fibonacci(i)}\`);
+}`;
+
+    const pyCode = `# Welcome to Caret!
+def fibonacci(n):
+    if n < 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Calculate first 25 Fibonacci numbers
+for i in range(25):
+    print(" i: " + f'{i} = {fibonacci(i)}. ')`;
+
+    const htmlCode = `<!-- Welcome to Caret! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caret HTML Demo</title>
+</head>
+<body>
+  <h1>Hello, Caret!</h1>
+  <p>This is a simple HTML example to demonstrate Caret's capabilities.</p>
+  <ul>
+    <li>HTML5 support</li>
+    <li>Syntax highlighting</li>
+    <li>Auto-completion</li>
+  </ul>
+</body>
+</html>`;
+
+    const editorInstance = await createTextEditor(
+      document.getElementById('editor'),
+      jsCode,
+      'demo-editor',
+      {
+        dark: true,
+        language: 'javascript',
+        hlTheme: 'tokyo-night-dark',
+        focusColor: '#7116d8',
+        id: Math.floor(Math.random() * 1000000000),
+        theme: {
+          dark: {
+            'background.editor': '#1a1a2e',
+            'background.lineCounter': '#16213e',
+            'color.editor': '#d4d4d4',
+            'color.lineCounter': '#888',
+            'editor.caret': '#7116d8'
+          },
+          light: {
+            'background.editor': '#fff',
+            'background.lineCounter': '#f0f0f0',
+            'color.editor': '#000',
+            'color.lineCounter': '#666',
+            'editor.caret': '#7116d8'
+          }
+        }
+      }
+    );
+
+    window.editorInstance = editorInstance;
+
+    window.changeLanguage = async (lang) => {
+      window.language = lang;
+      await editorInstance.setLanguage(lang);
+      if (lang === 'javascript') editorInstance.setValue(jsCode);
+      if (lang === 'python') editorInstance.setValue(pyCode);
+      if (lang === 'html') editorInstance.setValue(htmlCode);
+    };
+
+    window.changeTheme = (theme) => {
+      window.currentTheme = theme;
+      // update the hlTheme stylesheet
+      const link = document.getElementById('caret-theme-demo-editor');
+      if (link) link.href = `https://esm.sh/@pfmcodes/highlight.js@1.0.0/styles/${theme}.css`;
+    };
+
+    window.runCode = async () => {
+      const resultEl = document.getElementById('result');
+      resultEl.textContent = 'Running...';
+
+      if (window.language === 'html') {
+        resultEl.innerHTML = editorInstance.getValue();
+        return;
+      }
+
+      const code = editorInstance.getValue();
+      const lang = window.language;
+
+      try {
+        const res = await fetch('https://lexius-transpiler.onrender.com/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code, lang })
+        });
+
+        if (!res.ok) throw new Error(`Server error: ${res.status}`);
+
+        const data = await res.json();
+        const exec = data.result ?? {};
+        const stdout = exec.stdout ?? '';
+        const stderr = exec.stderr ?? '';
+        const result = exec.result !== undefined && exec.result !== null
+          ? String(exec.result) : '';
+
+        resultEl.textContent = [stdout, stderr, result].filter(Boolean).join('\n') + '\n';
+      } catch (err) {
+        resultEl.textContent = 'Error: ' + (err.message || err) + '\n';
+      }
+    };
+
+    window.getCode = async () => {
+      try {
+        await navigator.clipboard.writeText(editorInstance.getValue());
+        window.confirm('Text copied to clipboard');
+      } catch (err) {
+        window.alert('Failed to copy: ', err);
+      }
+    };
+  </script>
+</body>
+</html>
