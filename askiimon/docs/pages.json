@@ -1,0 +1,6 @@
+{
+    "init": "init",
+    "setMood": "setMood",
+    "setMessage": "setMessage",
+    "setShowWarning": "setShowWarning"
+}

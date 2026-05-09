@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://esm.sh/@pfmcodes/highlight.js@1.0.0/styles/atom-one-dark.css');
+
+:root {
+    --sidebar-width: 0;
+    --bg: #111318;
+    --surface: #1A1D24;
+    --navbar: #20242D;
+
+    --text: #F5F7FA;
+    --muted: #9CA3AF;
+
+    --purple: #9A82F2;
+    --green: #5FC281;
+    --pink: #F16D8E;
+
+    --border: #2E3440;
+    --warning: ;
+}
+
+* {
+    scrollbar-width: none;
+    transition:
+        width 0.25s ease,
+        opacity 0.25s ease;
+}
+
+body {
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+}
+
+.main {
+    height: 100%;
+    width: calc(100% - var(--sidebar-width));
+}
+
+nav {
+    height: 70px;
+    max-height: 70px;
+    width: calc(100% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    padding-bottom: 0;
+    background: var(--navbar) !important;
+    color: var(--text);
+}
+
+nav .right, .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+nav svg {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 70%;
+}
+
+nav .right .links a {
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.45s color ease;
+    cursor: pointer;
+}
+
+nav a.active {
+    color: rgba(154,130,242,0.9) !important;
+}
+
+.brand-0:hover {
+    color: rgba(154,130,242,0.9) !important;
+}
+
+.brand-1:hover {
+    color: rgba(95,194,129,0.9) !important;
+}
+
+.brand-2:hover {
+    color: rgba(241,109,142,0.9) !important;
+}
+
+nav .right .search {
+    display: flex;
+    background: linear-gradient(
+        135deg,
+        rgba(154,130,242,0.9),
+        rgba(95,194,129,0.9),
+        rgba(241,109,142,0.9)
+    );
+
+    backdrop-filter: blur(12px);
+    padding: 5px;
+    color: var(--text);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+nav .right .search input {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--surface);
+    color: var(--text);
+    padding: 5px;
+    width: 0;
+    opacity: 0;
+    transition:
+        width 0.25s ease,
+        opacity 0.25s ease;
+}
+
+nav .right .search svg {
+    width: 25px;
+}
+
+nav .right .search input.active {
+    padding: 5px;
+    width: auto;
+    opacity: 1;
+}
+
+nav .right .search input:focus {
+    outline: none;
+}
+
+nav .right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.kode-mono-100 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+}
+
+.kode-mono-200 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 200;
+}
+
+.kode-mono-300 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+
+.kode-mono-400 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+.kode-mono-500 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+
+.kode-mono-600 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+.kode-mono-700 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
+
+.content {
+    padding: 10px;
+}
+
+.menu {
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+}
+
+.menu svg {
+    width: 30px;
+    height: 20px;
+}
+
+blockquote {
+    background-color: var(--warning);
+    margin: 0 !important;
+    padding: 5px 50px 5px 50px;
+    font-style: italic;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+blockquote * {
+    margin: 0;
+}
