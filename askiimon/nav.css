@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://esm.sh/@pfmcodes/highlight.js@1.0.0/styles/atom-one-dark.css');
+@import url("../nav.css");
+
+:root {
+    --sidebar-width: 0%;
+    --bg: #111318;
+    --surface: #1A1D24;
+    --navbar: #20242D;
+
+    --text: #F5F7FA;
+    --muted: #9CA3AF;
+
+    --purple: #9A82F2;
+    --green: #5FC281;
+    --pink: #F16D8E;
+
+    --border: #2E3440;
+    --max-sidebar-width: 21%;
+}
+
+* {
+    scrollbar-width: none;
+    transition:
+        width 0.25s ease,
+        opacity 0.25s ease;
+}
+
+body {
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+}
+
+nav {
+    height: 70px;
+    max-height: 70px;
+    width: auto;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    padding-bottom: 0;
+    background: rgba(255, 255, 255, 0.1); 
+    margin: 10px;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.navbar.is-sticky {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px 0; /* Shrink navbar when sticky */
+}
+
+nav .right, .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+nav .left svg {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 180px;
+    max-width: 100%;
+}
+
+nav .right .links a, .sidebar .links a {
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.45s color ease;
+    cursor: pointer;
+}
+
+nav a.active, .sidebar .links a.active {
+    color: rgba(154,130,242,0.9) !important;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.025);
+    transition: box-shadow 0.5s ease;
+}
+
+a {
+    text-decoration: none !important;
+    color: var(--text);
+}
+
+.brand-0 {
+    color: rgba(154,130,242,0.9) !important;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+.brand-1 {
+    color: rgba(95,194,129,0.9) !important;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+.brand-2 {
+    color: rgba(241,109,142,0.9) !important;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+.brand-0-bg {
+    background-color: rgba(154, 130, 242, 0.8) !important;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+}
+
+.brand-1-bg {
+    background-color: rgba(95, 194, 129, 0.8) !important;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+}
+
+.brand-2-bg {
+    background-color: rgba(241, 109, 142, 0.8) !important;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+}
+
+nav .right .search {
+    display: flex;
+    background: linear-gradient(
+        135deg,
+        rgba(154,130,242,0.9),
+        rgba(95,194,129,0.9),
+        rgba(241,109,142,0.9)
+    );
+
+    backdrop-filter: blur(12px);
+    padding: 5px;
+    color: var(--text);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+nav .right .search input {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--surface);
+    color: var(--text);
+    padding: 5px;
+    width: 0;
+    opacity: 0;
+    transition:
+        width 0.25s ease,
+        opacity 0.25s ease;
+}
+
+nav .right .search svg {
+    width: 25px;
+}
+
+nav .right .search input.active {
+    padding: 5px;
+    width: auto;
+    opacity: 1;
+}
+
+nav .right .search input:focus {
+    outline: none;
+}
+
+nav .right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.kode-mono-100 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+}
+
+.kode-mono-200 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 200;
+}
+
+.kode-mono-300 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+
+.kode-mono-400 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+.kode-mono-500 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+
+.kode-mono-600 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+.kode-mono-700 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}

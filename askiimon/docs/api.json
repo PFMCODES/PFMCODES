@@ -1,0 +1,37 @@
+{
+    "init": {
+        "Object": {
+            "startingMood": { "required": false, "type": "string", "default": "Idle" },
+            "startingMessage": { "required": false, "type": "string", "default": "" }
+        }
+    },
+    "setMood": {
+        "moodName": {
+            "required": true,
+            "type": "string"
+        }
+    },
+    "setMessage": {
+        "message": {
+            "required": true,
+            "type": "string"
+        }
+    },
+    "setShowWarning": {
+        "boolean": {
+            "required": true,
+            "type": "boolean",
+            "default": ""
+        }
+    },
+    "learnMood": {
+        "moodName": {
+            "required": true,
+            "type": "string"
+        },
+        "mood": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -2,5 +2,6 @@
     "init": "init",
     "setMood": "setMood",
     "setMessage": "setMessage",
-    "setShowWarning": "setShowWarning"
+    "setShowWarning": "setShowWarning",
+    "learnMood": "learnMood"
 }

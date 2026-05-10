@@ -12,16 +12,28 @@
 <ul>
 <li>Object
 <ul>
-<li>state(starting mood)  <div class="hljs-type hljs-string">string</div>
-</li>
-<li>starting message  <div class="hljs-type hljs-string">string</div>
-</li>
+<li>state(starting mood)
+<br>
+<span class="hljs-type">string</span>,<br>
+<span class="hljs-title function">default</span>: <span class="hljs-type hljs-string">&quot;idle&quot;</span></li>
+<li>starting message
+<br>
+<span class="hljs-type">string</span>,<br>
+<span class="hljs-title function">default</span>: <span class="hljs-type hljs-string">&quot;&quot;</span></li>
 </ul>
 </li>
 </ul>
 <blockquote>
 <p>this same function can be called as &quot;birth&quot; &amp; &quot;create&quot;</p>
 </blockquote>
+<h2>Usage:</h2>
+<pre><code class="language-javascript">import aksiimon from &quot;askiimon&quot;;
+
+const mon = askiimon.init({
+    &quot;ohh!&quot;,
+    &quot;&quot;
+})
+</code></pre>
 
     <script type="module" src="./ui.js"></script>
 </body>

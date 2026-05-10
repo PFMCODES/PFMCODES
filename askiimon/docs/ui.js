@@ -1,5 +1,9 @@
 import hl from "https://esm.sh/@pfmcodes/highlight.js@1.0.0";
-import javascript from "https://esm.sh/@pfmcodes/highlight.js/es/languages/javascript.js"
+import javascript from "https://esm.sh/@pfmcodes/highlight.js/es/languages/javascript.js";
+import bash from "https://esm.sh/@pfmcodes/highlight.js/es/languages/bash.js";
+
+const apiJson = await fetch("./api.json").then(res => res.json());
+console.log(apiJson);
 
 const body = document.body;
 let nav = `
@@ -27,36 +31,77 @@ let nav = `
     </button>
 </div>
 `;
-const sidebar = ``;
-body.innerHTML = `
-    <div class="main">
-        <nav>${nav}</nav>
-        <div class="content">${body.innerHTML}</div>
+const sidebar = `
+<div class="sidebar-nav">
+    <button id="sidebar-back-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H10"/></svg></button>
+    <div class="links">
+        <a href="../">Home</a>
+        <a class="active">Docs</a>
+        <a href="https://npmjs.org/package/askiimon/">NPM</a>
+        <a href="https://github.com/pfmcodes/askiimon">Github</a>
     </div>
-    <div class="sidebar">${sidebar}</div>
+</div>
+<div class="sidebar-content"></div>
+`;
+const originalContent = body.innerHTML;
+body.innerHTML = `
+    <div class="page-wrapper">
+            <div class="main">
+            <div class="sentinal"></div>
+            <nav>${nav}</nav>
+            <div class="content">${originalContent}</div>
+        </div>
+        <div class="sidebar">${sidebar}</div>
+    </div>
 `;
 
 body.classList.add("kode-mono-400");
 hl.registerLanguage("javascript", javascript);
+hl.registerLanguage("bash", bash);
 hl.highlightAll();
 
 const search = document.getElementById("search");
 const searchInput = search.querySelector("input");
 const menuBtn = body.querySelector("button.menu");
 const root = document.documentElement;
+const styles = getComputedStyle(root);
+const sidebarEl = document.querySelector(".sidebar");
+const sideBarBackBtn = document.querySelector("#sidebar-back-btn");
 
-let menuState = true;
+console.log(styles.getPropertyValue("--max-sidebar-width"))
+
+const isMobile = window.matchMedia("(width < 426px)").matches;
+
+let menuState = !isMobile;
 
 if (menuState) {
-    root.style.setProperty('--sidebar-width', `20%`);
+    root.style.setProperty('--sidebar-width', `25%`);
 }
 else {
     root.style.setProperty('--sidebar-width', `0`);
 }
 
+sideBarBackBtn.addEventListener("click", () => {
+    console.log("click from sidebar back btn");
+    sidebarEl.classList.remove("active");
+});
+
 menuBtn.addEventListener("click", () => {
+    console.log("menu btn clicked");
+    
+    if (isMobile) {
+        if (!menuState) {
+            sidebarEl.classList.add("active");
+        }
+        else {
+            sidebarEl.classList.remove("active");
+        }
+        return;
+    }
+    
     menuState = !menuState;
 
+    console.log("click is from other devices")
     let i;
     let interval;
 
@@ -65,16 +110,16 @@ menuBtn.addEventListener("click", () => {
 
         interval = setInterval(() => {
             root.style.setProperty('--sidebar-width', `${i}%`);
-
+            console.log(styles.getPropertyValue("--sidebar-width"));
             i++;
 
-            if (i > 20) {
+            if (i > 25) {
                 clearInterval(interval);
             }
         }, 20);
 
     } else {
-        i = 20;
+        i = 25;
 
         interval = setInterval(() => {
             root.style.setProperty('--sidebar-width', `${i}%`);
@@ -116,20 +161,106 @@ const classes = [
     "brand-2"
 ];
 
+const classesBg = [
+    "brand-0-bg",
+    "brand-1-bg",
+    "brand-2-bg"
+];
+
 links.forEach(link => {
     if (link.classList.contains("active")) return;
+    let randomClass;
     link.addEventListener("mouseenter", () => {
         link.classList.remove(...classes);
 
-        const randomClass =
+        randomClass =
             classes[Math.floor(Math.random() * classes.length)];
 
         link.classList.add(randomClass);
     });
+    link.addEventListener("mouseleave", () => {
+        link.classList.remove(randomClass);
+    })
 });
 
 const blockquotes = document.querySelectorAll("blockquote")
 
 blockquotes.forEach((bq) => {
-    bq.classList.add("kode-mono-500")
-})
+    bq.classList.add("kode-mono-500");
+    bq.innerHTML = `<span style="display: flex; width: 5px; margin-right: 45px; border-radius: 10px; margin-left: 5px; height: 25px; background-color: var(--pink);"></span>\n${bq.innerHTML}`
+});
+ 
+const navbar = document.querySelector("nav");
+const sentinel = document.querySelector('.sentinal');
+
+const handler = (entries) => {
+  if (!entries[0].isIntersecting) {
+    navbar.classList.add('is-sticky');
+  } else {
+    navbar.classList.remove('is-sticky');
+  }
+};
+
+const observer = new IntersectionObserver(handler);
+observer.observe(sentinel);
+
+const container = document.querySelector(".sidebar-content");
+renderAPI(apiJson, container, 2, null);
+
+function renderAPI(obj, parent, n = 2, l) {
+    for (const key in obj) {
+        const val = obj[key];
+        const block = document.createElement("div");
+        block.className = "dropDown";
+
+        const isParam =
+            val &&
+            typeof val === "object" &&
+            "type" in val &&
+            "required" in val;
+
+            if (l === "Object") {
+                l = "init";
+            }
+
+        if (isParam) {
+            block.innerHTML = `
+                ${l != null ? `<a href="./${l}.html" style="font-style: none;">` : ""}
+                    <strong class="hljs-title function">${key}</strong> ${val.required === true ? "(<span class='hljs-type hljs-error'>required</span>)" : ""}
+                    <div style="margin: 10px;">
+                        <span class="hljs-type">${val.type}</span>
+                    </div>
+                ${l != null ? `</a>` : ""}
+            `;
+        } else {
+            const title = document.createElement("div");
+            title.classList.add("dropDown-title");
+
+            title.innerHTML = `<h${n}>${key}</h${n}>`;
+
+            const randomClass =
+                classesBg[Math.floor(Math.random() * classesBg.length)];
+
+            title.classList.add(randomClass);
+
+            // content wrapper
+            const content = document.createElement("div");
+            content.classList.add("dropDown-content");
+
+            renderAPI(val, content, n + 1, key);
+
+            // toggle logic
+            title.addEventListener("click", () => {
+                block.classList.toggle("open");
+            });
+
+            block.appendChild(title);
+            block.appendChild(content);
+            title.addEventListener("click", () => {
+                parent.classList.toggle("open");
+            });
+        }
+
+        parent.appendChild(block);
+    }
+}
