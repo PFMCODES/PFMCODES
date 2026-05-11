@@ -201,3 +201,105 @@ blockquote * {
         }
     }
 }
+
+.hero-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(20px);
+}
+
+.hero-btn.primary { 
+  background: linear-gradient(135deg, #9A82F2, #5FC281);
+  color: white; 
+  box-shadow: 0 8px 25px rgba(154,130,242,0.3);
+}
+
+.hero-btn.secondary { 
+  background: rgba(255,255,255,0.1);
+  color: var(--text); 
+}
+
+.hero-btn.npm { 
+  background: linear-gradient(135deg, #CB3837, #9F1239);
+  color: white; 
+}
+
+.hero-btn:hover { transform: translateY(-2px); }
+
+.feature-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.08);
+}
+
+.feature-icon {
+  font-size: 2.5em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.kaomoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.kaomoji-item {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.kaomoji-item:hover {
+  transform: scale(1.05);
+  background: rgba(154,130,242,0.15);
+}
+
+.kaomoji-display {
+  font-size: 2em;
+  font-family: "Kode Mono", monospace;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.kaomoji-display.happy { color: #5FC281; }
+.kaomoji-display.sad { color: #F16D8E; }
+.kaomoji-display.excited { color: #9A82F2; }
+
+.cta-btn {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #9A82F2, #F16D8E);
+  color: white !important;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(154,130,242,0.4);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(154,130,242,0.6);
+}
+
+.api-examples {
+  background: rgba(0,0,0,0.4);
+  border-left: 4px solid #9A82F2;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
