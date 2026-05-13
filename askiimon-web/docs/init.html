@@ -14,12 +14,15 @@
 <ul>
 <li>state(starting mood)
 <br>
-<span class="hljs-type- hljs-type">string</span>,<br>
+<span class="hljs-type">string</span>,<br>
 <span class="hljs-title function">default</span>: <span class="hljs-type hljs-string">&quot;idle&quot;</span></li>
 <li>starting message
 <br>
-<span class="hljs-type- hljs-type">string</span>,<br>
+<span class="hljs-type">string</span>,<br>
 <span class="hljs-title function">default</span>: <span class="hljs-type hljs-string">&quot;&quot;</span></li>
+<li>parent
+(<span class="hljs-type hljs-error">required</span>)<br>
+<span class="hljs-type">string</span>,<br></li>
 </ul>
 </li>
 </ul>
@@ -27,11 +30,12 @@
 <p>this same function can be called as &quot;birth&quot; &amp; &quot;create&quot;</p>
 </blockquote>
 <h2>Usage:</h2>
-<pre><code class="language-javascript">import askiimon from &quot;askiimon&quot;;
+<pre><code class="language-javascript">import askiimon from &quot;askiimon-web&quot;;
 
 const mon = askiimon.init({
     mood: &quot;ohh!&quot;,
-    message: &quot;&quot;
+    message: &quot;&quot;,
+    parent: &quot;parent&quot; // just pass in the parent element's id
 });
 </code></pre>
 

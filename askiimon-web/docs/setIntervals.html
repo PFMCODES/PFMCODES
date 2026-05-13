@@ -20,11 +20,12 @@
 <span class="hljs-title function">default</span>: <span class="hljs-type hljs-number">2000</span></li>
 </ul>
 <h2>Usage:</h2>
-<pre><code class="language-javascript">import askiimon from &quot;askiimon&quot;;
+<pre><code class="language-javascript">import askiimon from &quot;askiimon-web&quot;;
 
 const mon = askiimon.init({
     mood: &quot;ohh!&quot;,
-    message: &quot;&quot;
+    message: &quot;&quot;,
+    parent: &quot;parent&quot; // just pass in the parent element's id
 });
 
 mon.setIntervals(true, 5000); // can be used to add/remove intervals between setMessage, &amp; setMood

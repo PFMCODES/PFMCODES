@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>setMessage</title>
+    <title>setMood</title>
     <link rel="shortcut icon" href="../logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="ui.css">
 </head>
 <body>
-    <h1 class="hljs-title function">setMessage</h1>
+    <h1 class="hljs-title function">setMood</h1>
 <ul>
-<li>message
+<li>moodName
 (<span class="hljs-type hljs-error">required</span>)<br>  <div class="hljs-type">string</div>
 </li>
 </ul>
 <h2>Usage:</h2>
-<pre><code class="language-javascript">import askiimon from &quot;askiimon&quot;;
+<pre><code class="language-javascript">import askiimon from &quot;askiimon-web&quot;;
 
 const mon = askiimon.init({
     mood: &quot;ohh!&quot;,
-    message: &quot;&quot;
+    message: &quot;&quot;,
+    parent: &quot;parent&quot; // just pass in the parent element's id
 });
 
-mon.setMessage(&quot;hello, i am mon&quot;);
+mon.setMood(&quot;sad&quot;);
 </code></pre>
 
     <script type="module" src="./ui.js"></script>

@@ -2,7 +2,8 @@
     "init": {
         "Object": {
             "startingMood": { "required": false, "type": "string", "default": "Idle" },
-            "startingMessage": { "required": false, "type": "string", "default": "" }
+            "startingMessage": { "required": false, "type": "string", "default": "" },
+            "parent": { "required": true, "type": "string" }
         }
     },
     "setMood": {

@@ -1,7 +1,0 @@
-{
-    "init": "init",
-    "setMood": "setMood",
-    "setMessage": "setMessage",
-    "setShowWarning": "setShowWarning",
-    "learnMood": "learnMood"
-}

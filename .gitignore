@@ -14,7 +14,20 @@ apps/relay/commitAndPush.bat
 apps/relay/commit.bat
 apps/relay/push.bat
 
-askiimon/node_modules/*
-askiimon/docs/*.md
-askiimon/package-lock.json
-askiimon/tasks.txt
+node_modules/*
+docs/*.md
+package-lock.json
+tasks.txt
+links.json
+node_modules
+compile.js
+package-lock.json
+
+node_modules/*
+askiimon-web/docs/*.md
+package-lock.json
+tasks.txt
+links.json
+node_modules
+compile.js
+package-lock.json

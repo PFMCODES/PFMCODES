@@ -22,11 +22,12 @@
 </li>
 </ul>
 <h2>Usage:</h2>
-<pre><code class="language-javascript">import askiimon from &quot;askiimon&quot;;
+<pre><code class="language-javascript">import askiimon from &quot;askiimon-web&quot;;
 
 const mon = askiimon.init({
     mood: &quot;ohh!&quot;,
-    message: &quot;&quot;
+    message: &quot;&quot;,
+    parent: &quot;parent&quot; // just pass in the parent element's id
 });
 
 mon.learnMood(&quot;cat&quot;, &quot;ฅ^•ﻌ•^ฅ&quot;);
