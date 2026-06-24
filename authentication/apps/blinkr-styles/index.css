@@ -1,0 +1,317 @@
+/* ============================================================
+   Blinkr — Browser UI Styles
+   Purple theme: light + dark modes
+   ============================================================ */
+
+@font-face {
+  font-family: 'Lulo Clean';
+  src: url('../fonts/Lulo Clean W01 One Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* ── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: calc(40px + 56px) ;
+  overflow: hidden;
+  font-family: var(--font-ui);
+  font-size: calc(var(--extra-font-size) + 13px);
+  color: var(--text-primary);
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+#toolbar {
+  height: calc(40px + 56px) ;
+}
+
+/* ── Title Bar ─────────────────────────────────────────────── */
+.titlebar {
+  height: 40px;
+  background: var(--bg-titlebar);
+  display: flex;
+  align-items: center;
+  user-select: none;
+  padding: 0 8px 0 12px;
+  border-bottom: 1px solid var(--border);
+  -webkit-app-region: drag;
+  position: relative;
+  z-index: 100;
+  transition: background var(--transition);
+}
+
+.titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  -webkit-app-region: drag;
+  flex-shrink: 0;
+}
+
+.titlebar-drag {
+  flex: 1;
+  height: 100%;
+  -webkit-app-region: drag;
+}
+
+.titlebar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  -webkit-app-region: no-drag;
+  flex-shrink: 0;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.logo-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.app-name {
+  font-family: var(--font-brand);
+  font-size: calc(var(--extra-font-size) + 11px);
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* ── Theme Toggle ──────────────────────────────────────────── */
+.theme-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+}
+
+.theme-toggle:hover {
+  background: var(--btn-hover);
+  color: var(--accent);
+}
+
+.theme-toggle .icon { position: absolute; top: 5px; transition: opacity 0.2s, transform 0.3s; }
+.icon-moon { opacity: 1; transform: rotate(0deg); }
+.icon-sun  { opacity: 0; transform: rotate(90deg); }
+
+[data-theme="light"] .icon-moon { opacity: 0; transform: rotate(-90deg); }
+[data-theme="light"] .icon-sun  { opacity: 1; transform: rotate(0deg); }
+
+/* ── Window Controls ───────────────────────────────────────── */
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+}
+
+.wc-btn {
+  width: 30px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.wc-btn svg { width: 12px; height: 12px; }
+.wc-btn:hover { background: var(--btn-hover); color: var(--text-primary); }
+.wc-close:hover { background: var(--close-hover) !important; color: #fff !important; }
+
+/* ── Navigation Bar ────────────────────────────────────────── */
+.navbar {
+  height: 56px;
+  background: var(--bg-navbar);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+/* ── Nav Buttons ───────────────────────────────────────────── */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition), transform 0.12s;
+}
+
+.nav-btn svg { width: 18px; height: 18px; }
+.nav-btn:hover:not(:disabled) { background: var(--btn-hover); color: var(--accent); }
+.nav-btn:active:not(:disabled) { transform: scale(0.92); }
+.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* Reload / Stop icon swap */
+.nav-btn .icon-stop { display: none; }
+.nav-btn .icon-reload { display: block; }
+body.loading .nav-btn .icon-stop { display: block; }
+body.loading .nav-btn .icon-reload { display: none; }
+
+/* Spin animation when loading */
+body.loading .icon-stop { animation: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+body.loading #btnReload { animation: none; }
+
+/* ── Address Bar ───────────────────────────────────────────── */
+.address-bar-wrapper {
+  flex: 1;
+  min-width: 0;
+  width:auto
+}
+
+.address-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-address);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0 10px 0 8px;
+  height: 36px;
+  transition: background var(--transition), border-color var(--transition),
+}
+
+.address-bar:focus-within {
+  background: var(--bg-address-focus);
+  border-color: var(--border-focus);
+}
+
+.favicon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.favicon {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+/* Default (mask mode) */
+.favicon.default {
+  background-color: currentColor;
+
+  mask: url('../assets/images/default-favicon.svg') no-repeat center;
+  -webkit-mask: url('../assets/images/default-favicon.svg') no-repeat center;
+
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+/* Real favicon mode */
+.favicon.image {
+  background: none;
+  mask: none;
+  -webkit-mask: none;
+  object-fit: contain;
+}
+
+.security-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  display: none; /* shown via JS based on https */
+}
+
+.security-icon.secure { color: #22c55e; display: flex; }
+.security-icon.insecure { color: #f59e0b; display: flex; }
+
+.security-icon svg { width: 12px; height: 12px; }
+
+.url-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: calc(var(--extra-font-size) + 13px);
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+  caret-color: var(--accent);
+  min-width: 0;
+}
+
+.url-input::placeholder { color: var(--text-muted); }
+.url-input::selection { background: var(--accent-soft); }
+
+/* ── Loading Spinner ───────────────────────────────────────── */
+.loading-spinner {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+body.loading .loading-spinner { display: flex; }
+
+.spinner-ring {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--accent-soft);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+
+
+/* ── Nav Extras ────────────────────────────────────────────── */
+.nav-extras {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-soft); }
+
+/* ── More Menu ────────────────────────────────────────────── */
+.moreMenu {
+  position: absolute;
+  right: 12px;   /* 🔥 sticks to right */
+  top: 114px;     /* below navbar (same as navbar height) */
+}

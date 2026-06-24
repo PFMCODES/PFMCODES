@@ -1,0 +1,23 @@
+{
+  "name": "pfmcodes",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/PFM37/Website.#readme",
+  "bugs": {
+    "url": "https://github.com/PFM37/Website./issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PFM37/Website..git"
+  },
+  "license": "MIT",
+  "author": "PFMCODES",
+  "type": "commonjs",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

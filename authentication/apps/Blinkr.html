@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login To Blinkr</title>
+    <link rel="stylesheet" href="./blinkr-styles/blinkr-purp.css">
+    <link rel="stylesheet" href="./blinkr-styles/index.css">
+    <link rel="stylesheet" href="./blinkr-styles/components.css">
+    <link rel="stylesheet" href="./blinkr-styles/new.css">
+    <link rel="shortcut icon" href="./account-question-mark.svg" type="image/x-icon">
+</head>
+<body>
+    <div class="bg">
+        <img src="./bg-1.gif">
+    </div>
+    <div class="bk-container bk-flex container">
+        <div class="field">
+            <div class="bk-title bk-heading-xl">
+                Login
+            </div>
+            <div class="bk-input-group">
+                <div class="bk-heading-sm" style="color: var(--text-secondary);">
+                    Username
+                </div>
+                <div class="bk-input">
+                    <div class="bk-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <input type="text">
+                </div>
+                <div class="bk-heading-sm" style="color: var(--text-secondary);">
+                    Password
+                </div>
+                <div class="bk-input">
+                    <div class="bk-icon" id="lock">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <input type="password" id="password">
+                </div>
+                <strong class="bk-text-muted">
+                    Click the lock to show or hide the password
+                </strong>
+                <div style="display: flex; width: 100%;">
+                    <button class="bk-btn bk-btn-secondary bk-mt-16 lwg l">
+                        <div class="bk-text">
+                            Login
+                        </div>
+                    </button>
+                    <button class="bk-btn bk-btn-secondary bk-mt-16 lwg l">
+                        <div class="bk-text">
+                            Register
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="bk-heading-lg bk-color-brand bk-flex-row bk-items-center bk-justify-center bk-mt-16">or</div>
+            <button class="bk-btn bk-btn-secondary bk-mt-16 lwg">
+                <img src="https://google.com/favicon.ico" class="bk-icon">
+                <div class="bk-text">
+                    Login With Google
+                </div>
+            </button>
+        </div>
+    </div>
+    <script>
+        const lockBtn = document.getElementById("lock");
+        const passInput = document.getElementById("password");
+        const lock = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+        const unlock = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-open-icon lucide-lock-open"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
+
+        lockBtn.addEventListener("click", () => {
+            const passState = passInput.getAttribute("type");
+            const isEncrypted = passState === "password"
+            if (isEncrypted) {
+                passInput.setAttribute("type", "text");
+                lockBtn.innerHTML = unlock;
+            } else {
+                passInput.setAttribute("type", "password");
+                lockBtn.innerHTML = lock;
+            }
+        });
+    </script>
+    <script>
+        setInterval(() => {
+            const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
+        }, 500);
+    </script>
+</body>
+</html>
